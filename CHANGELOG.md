@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.8 - 2026-10-20
+
+- Beth & Kyle proposal repriced to sit at the UK full-day average: Full Day Video Coverage £950, Feature Film Edit £550, Highlights Reel included, total £1,500. Add-on prices unchanged.
+
 ## 0.2.7 - 2026-10-20
 
 - Beth & Kyle proposal updated: ceremony and speeches audio is now part of Full Day Video Coverage (£800, total unchanged at £1,175). The Highlights Reel shows as "Included" instead of a gift. Same-Day Edit and Drone Footage add-ons removed. Raw footage now reads "on request".
