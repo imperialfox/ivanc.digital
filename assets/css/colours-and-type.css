@@ -44,7 +44,10 @@
   --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;      /* big display type */
 }
 
-/* Dark mode: follows the visitor's system unless they choose light in the preferences panel. */
+/* SWITCHED OFF: dark mode following the visitor's device setting.
+   The site now always opens in light mode. To bring this back, remove the comment markers
+   around the block below (and the matching blocks in home.css and the theme-color tags in default.html).
+
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     --paper: #0A0A0A;
@@ -54,8 +57,9 @@
     --block: #1C1C1C;
   }
 }
+*/
 
-/* Dark mode chosen manually in the preferences panel. Keep these values the same as above. */
+/* Dark mode: only when the visitor turns it on with the switch in the footer. */
 :root[data-theme="dark"] {
   --paper: #0A0A0A;
   --ink: #EDEDED;

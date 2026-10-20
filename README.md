@@ -17,7 +17,7 @@ _config.yml                Site settings (motto, version, wordmark video switch,
 _data/links.yml            Email, socials, booking link, optional extras
 _projects/                 One small file per piece of work
 _layouts/                  default.html (every page) and project.html (each project page)
-_includes/                 nav, footer, work grid, index list, project card, preferences panel
+_includes/                 nav, footer (with the light/dark switch), work grid, index list, project card, preferences panel (switched off)
 assets/css/                Styles, split by job (see below)
 assets/js/                 Small scripts, one job each (see below)
 assets/fonts/              Self-hosted fonts (.woff2)
@@ -31,7 +31,7 @@ assets/projects/<name>/    Preview clip, poster and stills for each project
 | --- | --- |
 | `colours-and-type.css` | The reds, cream, black and the three typefaces. Change the look here. |
 | `base.css` | Page defaults, spacing, keyboard focus, reduced motion. |
-| `components.css` | Nav, footer, buttons, cards, media blocks, "unavailable" panel, preferences panel, cursor. |
+| `components.css` | Nav, footer, buttons, cards, media blocks, "unavailable" panel, footer light/dark switch, cursor, old preferences panel (switched off). |
 | `home.css` | Wordmark, grain, motto, work grid, index list, closing line. |
 | `about-and-contact.css` | About and Contact pages. |
 | `project.css` | Individual project pages. |
@@ -41,7 +41,7 @@ assets/projects/<name>/    Preview clip, poster and stills for each project
 
 | File | What it does | Loads on |
 | --- | --- | --- |
-| `preferences.js` | The hidden light/dark panel (the quiet dot in the footer). | Every page |
+| `preferences.js` | The light/dark switch in the footer. The old panel version is kept inside it, commented out. | Every page |
 | `media-fallback.js` | Fades pictures in, and shows "unavailable" if one can't load. | Every page |
 | `preview-loader.js` | Plays preview clips only while on screen. | Every page |
 | `custom-cursor.js` | Round red cursor. Does nothing on touch screens. | Every page |
@@ -93,7 +93,7 @@ Aim for a seamless 3 to 5 second loop, around 500 KB or less per file. Use MP4/W
 
 ## Colours and type
 
-Light mode is cream `#F4F0E6` with bold red `#E02424` for big shapes and a deeper red `#B30000` for small text, links and buttons. Dark mode is `#0A0A0A` with `#FF4D4D`. The site follows the visitor's system setting, and the footer dot opens a panel to override it. All of this lives in `assets/css/colours-and-type.css`.
+Light mode is cream `#F4F0E6` with bold red `#E02424` for big shapes and a deeper red `#B30000` for small text, links and buttons. Dark mode is `#0A0A0A` with `#FF4D4D`. The site always opens in light mode and no longer follows the visitor's device setting; the switch in the footer turns dark mode on and off, and the choice is remembered on that device. The device-following rules are still in the CSS, commented out, with a note on how to bring them back. All of this lives in `assets/css/colours-and-type.css`.
 
 Fonts are Inter Tight (headings, nav, labels), Inter (body) and Instrument Serif (display). Instrument Serif has no bold, so use italics or size for emphasis.
 

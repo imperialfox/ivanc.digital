@@ -4,6 +4,12 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.11 - 2026-10-20
+
+- The site now always opens in light mode. It no longer follows the visitor's device light/dark setting. Those rules are commented out (not deleted) in `colours-and-type.css`, `home.css` and `default.html`, each with a note on how to bring them back.
+- The footer has a visible light/dark switch next to "Designed by Ivan". Dark mode is remembered on that device. The browser bar colour changes with it.
+- The old quiet dot and its System / Light / Dark panel are switched off (commented out, files kept). `preferences.js` now drives the switch, with the old panel version kept at the bottom, commented out.
+
 ## 0.2.10 - 2026-10-20
 
 - Beth & Kyle proposal: Ivan is VAT-registered, so the VAT line is back to "inclusive of VAT at 20%" and the total shows that £1,520 includes £253.33 VAT (ex-VAT £1,266.67).

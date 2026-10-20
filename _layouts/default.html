@@ -6,8 +6,11 @@
   <title>{% if page.title and page.url != '/' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
   {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <meta name="theme-color" content="#F4F0E6">
+  {% comment %} Switched off: browser bar colour following the device's dark setting. preferences.js now changes the colour above when the footer switch is used.
   <meta name="theme-color" content="#F4F0E6" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+  {% endcomment %}
   <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
 
   <script>
@@ -31,7 +34,9 @@
     {{ content }}
   </main>
   {% include footer.html %}
+  {% comment %} Switched off: the System / Light / Dark panel, replaced by the footer switch. To bring it back, remove the comment tags and restore the dot in footer.html.
   {% include preferences-panel.html %}
+  {% endcomment %}
   {% if site.scroll_effects %}{% include scroll-button.html %}{% endif %}
   {% if site.pinned_logo %}{% include pinned-logo.html %}{% endif %}
 

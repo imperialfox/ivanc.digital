@@ -30,7 +30,9 @@
   mix-blend-mode: multiply;
   opacity: 0.35;
 }
+/* Switched off: following the device's dark setting (see colours-and-type.css).
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .grain::after { mix-blend-mode: screen; opacity: 0.18; } }
+*/
 :root[data-theme="dark"] .grain::after { mix-blend-mode: screen; opacity: 0.18; }
 @media (prefers-reduced-motion: no-preference) {
   .grain::after { animation: grain-shift 0.9s steps(4) infinite; }
@@ -48,10 +50,12 @@
 .wordmark-media video, .wordmark-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .wordmark-media .media-item { opacity: 1; }
 .wordmark-media .wordmark-dark { display: none; }
+/* Switched off: following the device's dark setting (see colours-and-type.css).
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .wordmark-media .wordmark-light { display: none; }
   :root:not([data-theme="light"]) .wordmark-media .wordmark-dark { display: block; }
 }
+*/
 :root[data-theme="dark"] .wordmark-media .wordmark-light { display: none; }
 :root[data-theme="dark"] .wordmark-media .wordmark-dark { display: block; }
 :root[data-theme="light"] .wordmark-media .wordmark-light { display: block; }

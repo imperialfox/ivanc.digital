@@ -1,5 +1,40 @@
-/* PREFERENCES: the hidden display panel (opened from the quiet dot in the footer).
-   Lets a visitor override the system light/dark setting. Their choice is remembered. */
+/* PREFERENCES: the light / dark switch in the footer.
+   The site always opens in light mode. The switch turns dark mode on and off, and the choice is
+   remembered on that device. The device's own light/dark setting is not followed any more. */
+(function () {
+  'use strict';
+
+  var root = document.documentElement;
+  var toggle = document.querySelector('.theme-switch');
+  if (!toggle) return;
+
+  var themeColour = document.querySelector('meta[name="theme-color"]');
+  var BAR_COLOURS = { light: '#F4F0E6', dark: '#0A0A0A' };   // browser bar colour, same as --paper in colours-and-type.css
+
+  function savedChoice() {
+    try { return localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'; } catch (e) { return 'light'; }
+  }
+
+  function apply(choice, remember) {
+    root.setAttribute('data-theme', choice);
+    toggle.setAttribute('aria-checked', choice === 'dark' ? 'true' : 'false');
+    if (themeColour) themeColour.setAttribute('content', BAR_COLOURS[choice]);
+    if (!remember) return;
+    try {
+      if (choice === 'dark') { localStorage.setItem('theme', 'dark'); } else { localStorage.removeItem('theme'); }
+    } catch (e) { /* storage blocked: the choice just lasts for this visit */ }
+  }
+
+  toggle.addEventListener('click', function () {
+    apply(toggle.getAttribute('aria-checked') === 'true' ? 'light' : 'dark', true);
+  });
+
+  apply(savedChoice(), false);
+})();
+
+/* SWITCHED OFF: the old System / Light / Dark panel version of this file. It opened from a dot in the
+   footer and could follow the device setting. To bring it back, see _layouts/default.html and footer.html.
+
 (function () {
   'use strict';
 
@@ -23,7 +58,7 @@
     }
     try {
       if (choice === 'system') { localStorage.removeItem('theme'); } else { localStorage.setItem('theme', choice); }
-    } catch (e) { /* storage blocked: the choice just lasts for this visit */ }
+    } catch (e) { }
     for (var i = 0; i < choices.length; i++) {
       var on = choices[i].getAttribute('data-theme-choice') === choice;
       choices[i].setAttribute('aria-checked', on ? 'true' : 'false');
@@ -57,3 +92,4 @@
 
   apply(savedChoice());
 })();
+*/

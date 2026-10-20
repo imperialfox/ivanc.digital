@@ -31,7 +31,44 @@
 }
 .site-footer a { text-decoration: none; }
 .site-footer a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.footer-credit { display: flex; align-items: center; gap: 0.25rem; }
+.footer-credit { display: flex; align-items: center; gap: 0.5rem; }
+
+/* Light / dark switch in the footer. Off = light (the default), on = dark. */
+.theme-switch {
+  appearance: none;
+  background: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+.theme-switch-track {
+  box-sizing: border-box;
+  position: relative;
+  width: 2rem;
+  height: 1.125rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+}
+.theme-switch-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(1.125rem - 8px);
+  height: calc(1.125rem - 8px);
+  border-radius: 50%;
+  background: currentColor;
+}
+.theme-switch[aria-checked="true"] .theme-switch-thumb { transform: translateX(calc(0.875rem + 2px)); }
+@media (prefers-reduced-motion: no-preference) {
+  .theme-switch-thumb { transition: transform 0.2s ease; }
+}
+
+/* Old footer dot for the preferences panel (switched off, kept for reference). */
 .prefs-open {
   appearance: none;
   background: none;
