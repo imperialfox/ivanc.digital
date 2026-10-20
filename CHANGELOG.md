@@ -4,9 +4,14 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.2 - 2026-10-20
+
+- Fix: the scroll button goes back to the spinning asterisk that fades into the arrow.
+- Your Imperial Fox logo is now pinned at the top centre of every page instead. Switch off with `pinned_logo: false` in `_config.yml`.
+
 ## 0.2.1 - 2026-10-20
 
-- Scroll button now spins the Imperial Fox logo instead of the placeholder asterisk. Logo also saved as `assets/images/logo.svg`.
+- Logo saved as `assets/images/logo.svg`. (Briefly used as the scroll button spinner; replaced in 0.2.2.)
 
 ## 0.2.0 - 2026-10-20
 

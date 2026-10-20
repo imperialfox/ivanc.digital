@@ -1,11 +1,11 @@
-/* EFFECTS: scroll button (logo that spins, then turns into a back-to-top arrow),
+/* EFFECTS: scroll button (asterisk that spins, then fades into a back-to-top arrow),
    soft fade-ins on scroll, and the draggable cubes Easter egg.
    Everything here is switched on or off by `scroll_effects` in _config.yml. */
 
 /* ---------- Scroll button ----------
-   Your Imperial Fox logo spins as you scroll. After a good way down it turns into
-   an arrow that takes you back to the top. To change the logo, swap the SVG
-   inside _includes/scroll-button.html. */
+   An asterisk spins as you scroll. After a good way down it fades into an arrow
+   that takes you back to the top. To change the icon, swap the SVG inside
+   _includes/scroll-button.html. */
 .scroll-button {
   position: fixed;
   right: var(--gutter);
@@ -39,7 +39,6 @@
   height: 100%;
   transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.scroll-spin .scroll-logo { inset: 0.2rem; width: calc(100% - 0.4rem); height: calc(100% - 0.4rem); }
 .scroll-arrow { opacity: 0; transform: translateY(0.6rem) scale(0.7); }
 .scroll-button.is-arrow .scroll-spin svg { opacity: 0; transform: scale(0.6); }
 .scroll-button.is-arrow .scroll-arrow { opacity: 1; transform: none; }
@@ -94,4 +93,23 @@ html.reveal-on [data-reveal].is-visible { opacity: 1; transform: none; }
 .cube polygon { stroke: var(--paper); stroke-width: 1.5; stroke-linejoin: round; }
 .cube.is-held svg { transform: scale(1.08); transition: transform 0.2s ease; }
 
-@media print { .scroll-button, .cube-field { display: none; } }
+/* ---------- Pinned logo ----------
+   Fixed at the top centre. White with a "difference" blend, so it reads as dark on
+   cream and light on near-black, and stays visible over photos and video. */
+.pinned-logo {
+  position: fixed;
+  top: 0.9rem;
+  left: 50%;
+  z-index: 45;
+  width: 2rem;
+  height: 2rem;
+  margin-left: -1rem;
+  color: #fff;
+  mix-blend-mode: difference;
+}
+.pinned-logo svg { width: 100%; height: 100%; display: block; }
+.pinned-logo:focus-visible { outline-color: #fff; }
+/* On narrow phones the menu runs close to the middle, so the logo sits just below the nav row. */
+@media (max-width: 36rem) { .pinned-logo { top: 3.1rem; } }
+
+@media print { .scroll-button, .cube-field, .pinned-logo { display: none; } }
