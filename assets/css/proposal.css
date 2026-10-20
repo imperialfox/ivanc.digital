@@ -1,0 +1,208 @@
+/* PROPOSAL: private client pricing pages (see proposals/).
+   Colours and fonts come from colours-and-type.css, so they follow the rest of the site. */
+
+.page-proposal {
+  --muted: color-mix(in srgb, var(--ink) 62%, var(--paper));
+  --hairline: color-mix(in srgb, var(--ink) 18%, var(--paper));
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.proposal-head { padding: 2rem 0 var(--space); max-width: 60rem; }
+.proposal-eyebrow { color: var(--red-deep); border-top: 0; padding-top: 0; margin-bottom: 1rem; }
+.proposal-sub {
+  margin-top: 1.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+.proposal-sub span:last-child { color: var(--muted); }
+
+.proposal-section { padding-bottom: var(--space); max-width: 60rem; }
+
+/* ---------- Included rows (same feel as the Home index list) ---------- */
+.proposal-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.5rem 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.proposal-row h3,
+.proposal-addon h3 {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 3.4vw, 1.625rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+.proposal-row p:not(.proposal-price) { color: var(--muted); font-size: 0.875rem; max-width: 58ch; }
+.proposal-price {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: clamp(1.375rem, 3.4vw, 1.75rem);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  text-align: right;
+  letter-spacing: -0.01em;
+}
+
+/* ---------- Gift: the one full red panel ---------- */
+.proposal-gift {
+  margin-top: 1.75rem;
+  background: var(--red-deep);
+  color: var(--paper);
+  border-radius: 0.875rem;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  gap: 0.75rem 2rem;
+  align-items: end;
+}
+@media (min-width: 40rem) { .proposal-gift { grid-template-columns: minmax(0, 1fr) auto; } }
+.proposal-gift h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.25rem, 7vw, 3.75rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.625rem;
+}
+.proposal-gift p:not(.proposal-gift-tag) { font-size: 0.875rem; max-width: 52ch; }
+.proposal-gift-tag {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(2.125rem, 6vw, 3.25rem);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* ---------- Total ---------- */
+.proposal-total {
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+}
+.proposal-total-label {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 0.375rem;
+}
+.proposal-total-note { font-size: 0.8125rem; color: var(--muted); }
+.proposal-total-sum {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 14vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--red);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* ---------- Add-ons (open and close with no script) ---------- */
+.proposal-addon { border-bottom: 1px solid var(--hairline); }
+.proposal-addon summary {
+  list-style: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.375rem 1.25rem;
+  padding: 1.375rem 0;
+}
+.proposal-addon summary::-webkit-details-marker { display: none; }
+.proposal-addon h3 { font-size: 1.1875rem; margin-bottom: 0.125rem; }
+.proposal-addon-title { display: block; min-width: 0; }
+.proposal-addon-title > span { color: var(--muted); font-size: 0.84375rem; }
+.proposal-addon .proposal-price { font-size: 1.375rem; }
+
+/* The plus turns into a cross when open. */
+.proposal-plus {
+  position: relative;
+  width: 2rem; height: 2rem;
+  border: 1px solid var(--hairline);
+  border-radius: 50%;
+  color: var(--red-deep);
+  transition: transform 0.5s var(--ease), background 0.3s, border-color 0.3s, color 0.3s;
+}
+.proposal-plus::before, .proposal-plus::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 0.75rem; height: 1.5px;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+}
+.proposal-plus::after { transform: translate(-50%, -50%) rotate(90deg); }
+.proposal-addon summary:hover .proposal-plus { border-color: var(--red-deep); }
+.proposal-addon[open] .proposal-plus {
+  transform: rotate(45deg);
+  background: var(--red-deep);
+  border-color: var(--red-deep);
+  color: var(--paper);
+}
+
+.proposal-addon-body { padding: 0 0 1.75rem; max-width: 64ch; }
+.proposal-addon-body h4 {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--red-deep);
+  margin: 0.25rem 0 0.5rem;
+}
+.proposal-addon-body p { color: var(--muted); font-size: 0.875rem; margin-bottom: 1.125rem; }
+.proposal-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.proposal-chips li {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  background: var(--block);
+  border-radius: 999px;
+  padding: 0.375rem 0.875rem;
+}
+
+/* Smooth open and close where the browser supports it. Elsewhere it simply opens. */
+@supports (interpolate-size: allow-keywords) {
+  .proposal-addon { interpolate-size: allow-keywords; }
+  .proposal-addon::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 0.5s var(--ease), content-visibility 0.5s allow-discrete;
+  }
+  .proposal-addon[open]::details-content { block-size: auto; }
+}
+
+/* ---------- Good to know ---------- */
+.proposal-notes { display: grid; gap: 0 3rem; }
+@media (min-width: 40rem) { .proposal-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.proposal-notes > div { padding: 1.25rem 0; border-bottom: 1px solid var(--hairline); }
+.proposal-notes h3 {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--red-deep);
+  margin-bottom: 0.375rem;
+}
+.proposal-notes p { font-size: 0.875rem; color: var(--muted); }
+
+/* Hover nudge on desktop only, and never with reduced motion. */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .proposal-row, .proposal-addon summary { transition: padding-left 0.5s var(--ease); }
+  .proposal-row:hover, .proposal-addon summary:hover { padding-left: 0.625rem; }
+}

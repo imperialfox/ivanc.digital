@@ -4,6 +4,12 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.6 - 2026-10-20
+
+- New private page type for client proposals, in `proposals/`. First one: Beth & Kyle wedding pricing at `/proposals/beth-and-kyle/`. Nothing on the site links to it, so only people you send the address to will find it. It carries `noindex: true`, which asks search engines to skip it.
+- New file: `assets/css/proposal.css` (cream and red, index-style rows, one red panel for the gift, add-ons that open and close with no script).
+- `_layouts/default.html` adds a "noindex" tag to any page that sets `noindex: true`.
+
 ## 0.2.5 - 2026-10-20
 
 - Cubes now stack properly. A cube dropped on another nests into its top face like a real stack of isometric cubes, instead of hovering above it with a gap, and settles into line with the one below. The higher cube is always drawn in front. The numbers `STACK` and `STACK_PULL` at the top of `cubes.js` control this.
