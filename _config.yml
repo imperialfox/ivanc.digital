@@ -8,13 +8,14 @@ url: "https://ivanc.digital"
 baseurl: ""
 
 # Site version. Used for cache busting (?v=...) on CSS and JS. Keep in step with CHANGELOG.md.
-version: "0.2.3"
+version: "0.2.4"
 
 # Scroll effects (0.2.0): spinning scroll button that turns into back-to-top, soft fade-ins
 # as you scroll, and the draggable cubes on Home. Set to false to switch them all off.
 scroll_effects: true
 
-# Your logo, fixed at the top centre of every page. Set to false to remove it.
+# Your logo, fixed at the top left of every page in place of the "ivanc.digital" text in the nav.
+# Set to false to remove it (the text comes back).
 pinned_logo: true
 
 # The motto. It appears on Home (under the big wordmark) and on Contact.

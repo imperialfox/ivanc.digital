@@ -10,7 +10,7 @@
   font-weight: 500;
 }
 .site-logo { text-decoration: none; font-size: 0.9375rem; }
-.site-menu { display: flex; gap: 1.25rem; }
+.site-menu { display: flex; gap: 1.25rem; margin-left: auto; }
 .site-menu a {
   text-decoration: none;
   font-size: 0.6875rem;
