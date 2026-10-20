@@ -4,6 +4,11 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.16 - 2026-10-21
+
+- About page: the placeholder text is replaced with Ivan's own copy, written in first person: the opening line, two short paragraphs about the studio and the work, and the "How it started" story. The gear and software list is still placeholder text until the kit list is ready.
+- Note: the design brief asked for a third-person bio. The About page is now first person at Ivan's request, so Contact and the footer credit are worth a look for tone.
+
 ## 0.2.15 - 2026-10-21
 
 - About page: the portrait placeholder is replaced with Ivan's photo. It is shown uncropped at 3:4 (the placeholder was 4:5).
