@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.5 - 2026-10-20
+
+- Cubes now stack properly. A cube dropped on another nests into its top face like a real stack of isometric cubes, instead of hovering above it with a gap, and settles into line with the one below. The higher cube is always drawn in front. The numbers `STACK` and `STACK_PULL` at the top of `cubes.js` control this.
+
 ## 0.2.4 - 2026-10-20
 
 - The pinned logo moves to the top left and replaces the small "ivanc.digital" text in the nav, so the name is not shown twice. With `pinned_logo: false` the text comes back.

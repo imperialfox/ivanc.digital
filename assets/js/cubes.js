@@ -17,6 +17,10 @@
   var BOUNCE = 0.38;          // how bouncy landings are (0 = dead, 1 = rubber)
   var WALL_BOUNCE = 0.45;     // bounce off the sides of the screen
   var MAX_THROW = 28;         // speed limit for flicks
+  var STACK = 45 / 64;        // how far above a cube the next one rests, as a share of its size.
+                              // 45/64 sinks the top cube's bottom corner into the middle of the top
+                              // face below, like a real stack of isometric cubes. 1 = floating gap.
+  var STACK_PULL = 0.18;      // how firmly a cube settling on another slides into line with it
 
   var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -50,6 +54,11 @@
     for (var i = 0; i < cubes.length; i++) {
       var c = cubes[i];
       c.el.style.transform = 'translate(' + c.x.toFixed(1) + 'px,' + c.y.toFixed(1) + 'px) rotate(' + c.rot.toFixed(1) + 'deg)';
+      // The cube higher up the screen is drawn in front, so it sits on top of the one below.
+      // A held cube is always in front of everything.
+      var rank = 0;
+      for (var j = 0; j < cubes.length; j++) if (cubes[j].y > c.y) rank++;
+      c.el.style.zIndex = c.held ? 30 : 5 + rank;
     }
   }
 
@@ -70,7 +79,8 @@
     var loose = cubes.filter(function (c) { return !c.held; }).sort(function (a, b) { return b.y - a.y; });
 
     loose.forEach(function (c) {
-      var bottomBefore = c.y + size;
+      var topBefore = c.y;
+      var step = size * STACK;
 
       c.vy += GRAVITY;
       c.vx *= AIR;
@@ -81,12 +91,14 @@
       if (c.x > maxX) { c.x = maxX; c.vx = -c.vx * WALL_BOUNCE; }
       if (c.y < minY) { c.y = minY; c.vy = Math.abs(c.vy) * WALL_BOUNCE; }
 
-      // What is underneath: the floor, or the top of another cube.
+      // What is underneath: the floor, or another cube (this one nests into its top face).
       var ground = floor;
+      var support = null;
       cubes.forEach(function (o) {
         if (o === c) return;
-        if (Math.abs(o.x - c.x) < size * 0.8 && bottomBefore <= o.y + 6) {
-          ground = Math.min(ground, o.y - size);
+        if (Math.abs(o.x - c.x) < size * 0.8 && topBefore <= o.y - step + 6 && o.y - step < ground) {
+          ground = o.y - step;
+          support = o;
         }
       });
 
@@ -96,6 +108,11 @@
         onGround = true;
         c.vy = c.vy > 2.5 ? -c.vy * BOUNCE : 0;
         c.vx *= FLOOR_FRICTION;
+        // Settling on a cube: slide into line with it so stacks look neat.
+        if (support && Math.abs(support.x - c.x) > 0.5) {
+          c.x += (support.x - c.x) * STACK_PULL;
+          moving = true;
+        }
       }
 
       if (onGround && Math.abs(c.vy) < 0.1 && Math.abs(c.vx) < 0.1) {
