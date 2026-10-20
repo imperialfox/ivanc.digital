@@ -1,0 +1,54 @@
+# ivanc.digital site settings. Plain-language options you can edit by hand.
+
+title: ivanc.digital
+description: Creative partner for brands and businesses through photo and video.
+url: "https://ivanc.digital"
+baseurl: ""
+
+# Site version. Used for cache busting (?v=...) on CSS and JS. Keep in step with CHANGELOG.md.
+version: "0.1.0"
+
+# The motto. It appears on Home (under the big wordmark) and on Contact.
+motto_lead: "Creative partner"
+motto_rest: "for brands and businesses through photo and video"
+
+# Big animated wordmark.
+# false = the wordmark is live text in Instrument Serif (default for now).
+# true  = play the exported loop instead. Needs these files in assets/images/wordmark/:
+#   wordmark-light.mp4, wordmark-light.webm, wordmark-dark.mp4, wordmark-dark.webm,
+#   wordmark-light-poster.webp, wordmark-dark-poster.webp
+wordmark_video: false
+
+# Privacy-friendly analytics (Plausible). Leave empty for none.
+plausible_domain: ""
+
+# Each piece of work is a small file in _projects/ and gets its own page.
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  # Project pages: use the project layout and load their own stylesheet and script.
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project
+      page_css: project.css
+      page_js:
+        - video-loader.js
+
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - CHANGELOG.md
+  - node_modules
+  - vendor

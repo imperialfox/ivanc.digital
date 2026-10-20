@@ -1,0 +1,17 @@
+{% comment %}
+  The plain index list under the grid: project, role, year.
+  Reads the same project files as the grid, in the same order.
+{% endcomment %}
+{% assign projects = site.projects | where_exp: "p", "p.published != false" | sort: "order" %}
+<section class="work-index" aria-label="Project index">
+  <div class="index-row index-head" aria-hidden="true">
+    <span>Project</span><span>Role</span><span>Year</span>
+  </div>
+  {% for p in projects %}
+    <a class="index-row" href="{{ p.url | relative_url }}">
+      <span class="index-project">{{ p.title }}</span>
+      <span class="index-role">{{ p.role }}</span>
+      <span class="index-year">{{ p.year }}</span>
+    </a>
+  {% endfor %}
+</section>

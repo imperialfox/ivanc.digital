@@ -1,0 +1,64 @@
+/* ABOUT AND CONTACT */
+
+.page-head { padding: 2rem 0 var(--space); }
+.page-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--red);
+  font-size: clamp(3.5rem, 14vw, 9rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+}
+.page-title em { font-style: italic; }
+
+.section-label {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-top: 1px solid var(--ink);
+  padding-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------- About ---------- */
+.about-grid { display: grid; gap: 2rem; padding-bottom: var(--space); }
+@media (min-width: 48rem) { .about-grid { grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; } }
+.about-text p { max-width: 60ch; margin-bottom: 1rem; }
+.about-text .lead { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.01em; }
+.about-section { padding-bottom: var(--space); }
+.gear { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1.5rem; }
+@media (min-width: 48rem) { .gear { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.gear h3 { font-family: var(--font-ui); font-weight: 500; font-size: 0.9375rem; margin-bottom: 0.35rem; }
+.gear p { font-size: 0.8125rem; }
+
+/* ---------- Contact ---------- */
+.contact-motto {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 7vw, 5rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  max-width: 18ch;
+  padding: 2rem 0 var(--space);
+}
+.contact-motto em { color: var(--red); }
+
+.contact-links { padding-bottom: 2rem; }
+.contact-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--ink);
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+.contact-links > :last-child { border-bottom: 1px solid var(--ink); }
+.contact-link span:last-child { color: var(--red-deep); transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.contact-link:hover span:last-child { transform: translateX(0.35rem); }
+.contact-link.is-primary { color: var(--red-deep); }
+
+.contact-extras { padding-bottom: var(--space); display: grid; gap: 0.35rem; font-size: 0.875rem; }

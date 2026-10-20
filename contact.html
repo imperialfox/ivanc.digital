@@ -1,0 +1,24 @@
+---
+title: Contact
+permalink: /contact/
+page_css: about-and-contact.css
+---
+{% assign links = site.data.links %}
+<h1 class="visually-hidden">Contact</h1>
+
+<p class="contact-motto"><em>{{ site.motto_lead }}</em> {{ site.motto_rest }}</p>
+
+<nav class="contact-links" aria-label="Contact links">
+  <a class="contact-link" href="mailto:{{ links.email }}"><span>Email</span><span aria-hidden="true">&rarr;</span></a>
+  <a class="contact-link" href="{{ links.instagram }}"><span>Instagram</span><span aria-hidden="true">&rarr;</span></a>
+  {% for other in links.others %}
+    <a class="contact-link" href="{{ other.url }}"><span>{{ other.name }}</span><span aria-hidden="true">&rarr;</span></a>
+  {% endfor %}
+  <a class="contact-link is-primary" href="{{ links.booking }}"><span>Book a call</span><span aria-hidden="true">&rarr;</span></a>
+</nav>
+
+<div class="contact-extras">
+  {% if links.location != "" %}<p>{{ links.location }}</p>{% endif %}
+  {% if links.response_time != "" %}<p>{{ links.response_time }}</p>{% endif %}
+  {% if links.rate_card != "" %}<p><a href="{{ links.rate_card }}">Download the rate card</a></p>{% endif %}
+</div>

@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="project">
+  <a class="project-back" href="{{ '/' | relative_url }}">&larr; All work</a>
+
+  <header class="project-header">
+    <h1 class="project-title">{{ page.title }}</h1>
+    <p class="project-meta">{{ page.role }}{% if page.year %} &middot; {{ page.year }}{% endif %}</p>
+  </header>
+
+  {% assign ratio_css = "16 / 9" %}
+  {% if page.ratio == "9x16" %}{% assign ratio_css = "9 / 16" %}{% endif %}
+
+  <div class="player media" data-ratio="{{ page.ratio }}" style="aspect-ratio: {{ ratio_css }};">
+    {% if page.video_embed %}
+      <button class="player-button" type="button" data-embed="{{ page.video_embed }}" data-watch="{{ page.video_watch }}" aria-label="Play {{ page.title }}">
+        {% if page.poster %}<img class="media-item" data-quiet src="{{ page.poster | relative_url }}" alt="" width="1600" height="900" loading="lazy">{% endif %}
+        <span class="player-label">Play</span>
+      </button>
+    {% else %}
+      <div class="unavailable" role="status">
+        <p class="unavailable-title">This video is unavailable right now</p>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="project-body">
+    {{ content }}
+  </div>
+</article>

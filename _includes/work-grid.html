@@ -1,0 +1,10 @@
+{% comment %}
+  The curated work grid. Order comes from the "order" number in each project file.
+  Items flow down each column, so check the rhythm in the browser when you reorder.
+{% endcomment %}
+{% assign projects = site.projects | where_exp: "p", "p.published != false" | sort: "order" %}
+<section class="work-grid" id="work" aria-label="Selected work">
+  {% for project in projects %}
+    {% include project-card.html project=project %}
+  {% endfor %}
+</section>

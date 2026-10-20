@@ -1,0 +1,22 @@
+{% comment %}
+  One project card. Used by the work grid.
+  Pass the project in as include.project.
+{% endcomment %}
+{% assign p = include.project %}
+{% assign ratio_css = "16 / 9" %}
+{% if p.ratio == "9x16" %}{% assign ratio_css = "9 / 16" %}{% endif %}
+<a class="card" href="{{ p.url | relative_url }}" data-ratio="{{ p.ratio }}">
+  <div class="media" style="aspect-ratio: {{ ratio_css }};">
+    {% if p.preview %}
+      <video class="media-item" muted loop playsinline preload="none"
+        {% if p.poster %}poster="{{ p.poster | relative_url }}"{% endif %}
+        data-src="{{ p.preview | relative_url }}"></video>
+    {% else %}
+      <span class="media-label">{% if p.placeholder %}Placeholder{% else %}Preview coming soon{% endif %}</span>
+    {% endif %}
+  </div>
+  <div class="card-caption">
+    <span class="card-brand">{{ p.title }}</span>
+    <span class="card-role">{{ p.role }}</span>
+  </div>
+</a>

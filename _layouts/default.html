@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != '/' %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#F4F0E6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+  <script>
+    /* Apply a saved light/dark choice before first paint, so there is no flash. */
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  </script>
+
+  <link rel="preload" href="{{ '/assets/fonts/inter-tight-500.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/colours-and-type.css' | relative_url }}?v={{ site.version }}">
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}?v={{ site.version }}">
+  <link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}?v={{ site.version }}">
+  {% if page.page_css %}<link rel="stylesheet" href="{{ '/assets/css/' | append: page.page_css | relative_url }}?v={{ site.version }}">{% endif %}
+
+  {% if site.plausible_domain != "" %}<script defer data-domain="{{ site.plausible_domain }}" src="https://plausible.io/js/script.js"></script>{% endif %}
+</head>
+<body class="{{ page.body_class }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {% include nav.html %}
+  <main id="main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  {% include preferences-panel.html %}
+
+  <script src="{{ '/assets/js/preferences.js' | relative_url }}?v={{ site.version }}" defer></script>
+  <script src="{{ '/assets/js/media-fallback.js' | relative_url }}?v={{ site.version }}" defer></script>
+  <script src="{{ '/assets/js/preview-loader.js' | relative_url }}?v={{ site.version }}" defer></script>
+  <script src="{{ '/assets/js/custom-cursor.js' | relative_url }}?v={{ site.version }}" defer></script>
+  {% if page.page_js %}{% for file in page.page_js %}<script src="{{ '/assets/js/' | append: file | relative_url }}?v={{ site.version }}" defer></script>{% endfor %}{% endif %}
+</body>
+</html>

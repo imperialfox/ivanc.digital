@@ -1,0 +1,16 @@
+# Contact links. Edit these values; the Contact page and footer update automatically.
+# These are PLACEHOLDERS: replace them with the real ones.
+
+email: "your-email@example.com"
+instagram: "https://instagram.com/your-handle"
+booking: "https://example.com/book"
+
+# Other socials. Add or remove lines as you like.
+others:
+  - name: "Vimeo"
+    url: "https://vimeo.com/your-page"
+
+# Optional extras. Leave a value empty ("") to hide it.
+location: ""
+response_time: ""
+rate_card: ""

@@ -1,0 +1,65 @@
+/* COLOURS AND TYPE
+   Change the red, the background or a typeface here and the whole site follows. */
+
+/* Fonts: self-hosted, Latin only. Inter Tight is preloaded in default.html. */
+@font-face {
+  font-family: "Inter Tight";
+  src: url("../fonts/inter-tight-500.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/inter-400.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("../fonts/instrument-serif-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Instrument Serif";
+  src: url("../fonts/instrument-serif-italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light mode (default): warm cream with a bold red. */
+:root {
+  --paper: #F4F0E6;      /* page background */
+  --ink: #141414;        /* main text and thin lines */
+  --red: #E02424;        /* bold red: big shapes and headlines only */
+  --red-deep: #B30000;   /* deeper red: small text, links, buttons (passes contrast) */
+  --block: #E6DFCF;      /* placeholder and loading blocks */
+
+  --font-ui: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;   /* headings, nav, names, labels */
+  --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;       /* body text and captions */
+  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;      /* big display type */
+}
+
+/* Dark mode: follows the visitor's system unless they choose light in the preferences panel. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0A0A0A;
+    --ink: #EDEDED;
+    --red: #FF4D4D;
+    --red-deep: #FF4D4D;
+    --block: #1C1C1C;
+  }
+}
+
+/* Dark mode chosen manually in the preferences panel. Keep these values the same as above. */
+:root[data-theme="dark"] {
+  --paper: #0A0A0A;
+  --ink: #EDEDED;
+  --red: #FF4D4D;
+  --red-deep: #FF4D4D;
+  --block: #1C1C1C;
+}
