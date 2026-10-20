@@ -103,9 +103,9 @@ Then open http://localhost:4000. Needs Ruby.
 
 ## Publishing on GitHub Pages
 
-In the repo on GitHub: Settings, then Pages, then deploy from the `main` branch (root). The preview address is https://imperialfox.github.io/ivanc.digital/ and needs `baseurl: "/ivanc.digital"` in `_config.yml` (already set).
+The site is deployed from the `main` branch (root) in the repo's Settings, then Pages. It is served from the custom domain https://ivanc.digital, set by the `CNAME` file, so `baseurl` in `_config.yml` stays empty. Turn on "Enforce HTTPS" in the same Pages settings once the certificate is ready.
 
-To use ivanc.digital, add the domain in the same Pages settings and point your DNS at GitHub Pages. Then set `baseurl: ""` in `_config.yml`. A `CNAME` file is not included yet on purpose.
+If you ever serve the site from `imperialfox.github.io/ivanc.digital` instead, set `baseurl: "/ivanc.digital"`.
 
 ## Quirks worth knowing
 

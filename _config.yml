@@ -3,12 +3,12 @@
 title: ivanc.digital
 description: Creative partner for brands and businesses through photo and video.
 url: "https://ivanc.digital"
-# Preview address (imperialfox.github.io/ivanc.digital) needs "/ivanc.digital" here.
-# Once the custom domain ivanc.digital is connected, change this back to "".
-baseurl: "/ivanc.digital"
+# Empty because the site is served from the custom domain ivanc.digital (see CNAME).
+# Only if you ever serve it from imperialfox.github.io/ivanc.digital instead, set this to "/ivanc.digital".
+baseurl: ""
 
 # Site version. Used for cache busting (?v=...) on CSS and JS. Keep in step with CHANGELOG.md.
-version: "0.1.0"
+version: "0.1.1"
 
 # The motto. It appears on Home (under the big wordmark) and on Contact.
 motto_lead: "Creative partner"

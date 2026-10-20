@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.1.1 - 2026-10-20
+
+- Custom domain ivanc.digital connected (CNAME). `baseurl` set back to empty so links no longer double up the repo name.
+
 ## 0.1.0 - 2026-10-20
 
 First scaffold, with placeholders.
