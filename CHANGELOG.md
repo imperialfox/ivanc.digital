@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.10 - 2026-10-20
+
+- Beth & Kyle proposal: Ivan is VAT-registered, so the VAT line is back to "inclusive of VAT at 20%" and the total shows that £1,520 includes £253.33 VAT (ex-VAT £1,266.67).
+
 ## 0.2.9 - 2026-10-20
 
 - Beth & Kyle proposal: travel wording clarified (50 miles from base included, then £0.45 per mile on the extra distance, return journey, overnight stays agreed in advance). VAT line now reads "No VAT is charged". Total £1,520.
