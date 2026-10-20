@@ -4,6 +4,11 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.12 - 2026-10-20
+
+- The film grain now covers the whole top section of Home (the wordmark, the white space to its right and the motto) instead of only the letters. It runs the full content width and stops 30px above the work grid. The 30px is `--grain-gap` in `home.css`.
+- To do this, the `grain` class moved from the wordmark heading to the hero section in `index.html`. It is only added when the live-text wordmark is used (`wordmark_video: false`), since an exported wordmark video has its own grain.
+
 ## 0.2.11 - 2026-10-20
 
 - The site now always opens in light mode. It no longer follows the visitor's device light/dark setting. Those rules are commented out (not deleted) in `colours-and-type.css`, `home.css` and `default.html`, each with a note on how to bring them back.

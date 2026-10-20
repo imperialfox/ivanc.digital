@@ -6,7 +6,7 @@ page_js:
   - cubes.js
 body_class: home
 ---
-<section class="hero">
+<section class="hero{% unless site.wordmark_video %} grain{% endunless %}">
   {% if site.wordmark_video %}
     <div class="wordmark-media" data-parallax="0.08" aria-hidden="true">
       <video class="media-item wordmark-light" data-quiet autoplay muted loop playsinline poster="{{ '/assets/images/wordmark/wordmark-light-poster.webp' | relative_url }}">
@@ -20,7 +20,7 @@ body_class: home
     </div>
     <h1 class="visually-hidden">ivanc.digital</h1>
   {% else %}
-    <h1 class="wordmark grain" data-parallax="0.08" aria-label="ivanc.digital">
+    <h1 class="wordmark" data-parallax="0.08" aria-label="ivanc.digital">
       <span class="wordmark-text" aria-hidden="true">ivanc</span>
       <span class="wordmark-text wordmark-italic" aria-hidden="true">.digital</span>
     </h1>
