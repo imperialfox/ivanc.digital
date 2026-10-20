@@ -81,7 +81,7 @@ Pages in `proposals/` are not linked from anywhere on the site. Send the address
 
 ## The big wordmark
 
-By default the wordmark is live text in Instrument Serif with a soft glow and a film-grain texture, all in CSS.
+By default the wordmark is live text in Instrument Serif with a soft glow, all in CSS. The film-grain texture over the top of Home is switched off for now; set `grain: true` in `_config.yml` to turn it back on.
 
 To use an exported loop from DaVinci Resolve instead, put these files in `assets/images/wordmark/` and set `wordmark_video: true` in `_config.yml`:
 

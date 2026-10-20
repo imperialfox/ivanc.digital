@@ -8,7 +8,7 @@ url: "https://ivanc.digital"
 baseurl: ""
 
 # Site version. Used for cache busting (?v=...) on CSS and JS. Keep in step with CHANGELOG.md.
-version: "0.2.13"
+version: "0.2.14"
 
 # Scroll effects (0.2.0): spinning scroll button that turns into back-to-top, soft fade-ins
 # as you scroll, and the draggable cubes on Home. Set to false to switch them all off.
@@ -28,6 +28,10 @@ motto_rest: "for brands and businesses through photo and video"
 #   wordmark-light.mp4, wordmark-light.webm, wordmark-dark.mp4, wordmark-dark.webm,
 #   wordmark-light-poster.webp, wordmark-dark-poster.webp
 wordmark_video: false
+
+# Film grain over the top of the Home page (only used with the live-text wordmark).
+# false = off (current). true = on. Change this one word to toggle it.
+grain: false
 
 # Privacy-friendly analytics (Plausible). Leave empty for none.
 plausible_domain: ""

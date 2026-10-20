@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.14 - 2026-10-20
+
+- Film grain is switched off for now, because grain over a large area can slow scrolling. It is not deleted: set `grain: true` in `_config.yml` to turn it back on (live-text wordmark only). The grain CSS stays in `home.css`.
+
 ## 0.2.13 - 2026-10-20
 
 - Home grain now ignores the page's side gutters and the hero's top padding. It runs edge to edge across the screen, starts level with the top of the wordmark, and still stops 30px above the work grid (`--grain-gap`). The hero's top padding is now a named value (`--hero-top`) so the grain and the padding stay in step. The previous rule is kept in a comment in `home.css` so it is easy to revert.
