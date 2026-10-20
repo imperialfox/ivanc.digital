@@ -6,7 +6,7 @@ Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y
 
 ## 0.2.8 - 2026-10-20
 
-- Beth & Kyle proposal repriced to sit at the UK full-day average: Full Day Video Coverage £950, Feature Film Edit £550, Highlights Reel included, total £1,500. Add-on prices unchanged.
+- Beth & Kyle proposal repriced to sit at the UK full-day average: Full Day Video Coverage £975, Feature Film Edit £545, Highlights Reel included, total £1,520. Add-on prices unchanged.
 
 ## 0.2.7 - 2026-10-20
 
