@@ -44,6 +44,18 @@
 .scroll-button.is-arrow .scroll-arrow { opacity: 1; transform: none; }
 .scroll-button:hover .scroll-arrow { transform: translateY(-0.2rem); }
 
+/* On phones the button sits in the middle of the screen, still at the bottom.
+   The footer gets extra room so the button never covers its text at the end of the page. */
+@media (max-width: 36rem) {
+  .scroll-button {
+    left: 50%;
+    right: auto;
+    margin-left: -1.625rem;       /* half the button width */
+    bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  }
+  .site-footer { padding-bottom: 5.5rem; }
+}
+
 /* ---------- Soft fade-ins ----------
    reveal.js adds `reveal-on` to the page and tags things below the first screen.
    If scripts fail or motion is reduced, everything simply shows as normal. */

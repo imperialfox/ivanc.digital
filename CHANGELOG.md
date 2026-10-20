@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.3 - 2026-10-20
+
+- Scroll button is centred on phones (still at the bottom of the screen). The footer gets extra room on phones so the button never covers its text.
+
 ## 0.2.2 - 2026-10-20
 
 - Fix: the scroll button goes back to the spinning asterisk that fades into the arrow.
