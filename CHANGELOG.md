@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.9 - 2026-10-20
+
+- Beth & Kyle proposal: travel wording clarified (50 miles from base included, then £0.45 per mile on the extra distance, return journey, overnight stays agreed in advance). VAT line now reads "No VAT is charged". Total £1,520.
+
 ## 0.2.8 - 2026-10-20
 
 - Beth & Kyle proposal repriced to sit at the UK full-day average: Full Day Video Coverage £975, Feature Film Edit £545, Highlights Reel included, total £1,520. Add-on prices unchanged.
