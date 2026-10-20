@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.7 - 2026-10-20
+
+- Beth & Kyle proposal updated: ceremony and speeches audio is now part of Full Day Video Coverage (£800, total unchanged at £1,175). The Highlights Reel shows as "Included" instead of a gift. Same-Day Edit and Drone Footage add-ons removed. Raw footage now reads "on request".
+
 ## 0.2.6 - 2026-10-20
 
 - New private page type for client proposals, in `proposals/`. First one: Beth & Kyle wedding pricing at `/proposals/beth-and-kyle/`. Nothing on the site links to it, so only people you send the address to will find it. It carries `noindex: true`, which asks search engines to skip it.
