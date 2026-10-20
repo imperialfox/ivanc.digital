@@ -1,0 +1,96 @@
+/* EFFECTS: scroll button (asterisk that turns into a back-to-top arrow),
+   soft fade-ins on scroll, and the draggable cubes Easter egg.
+   Everything here is switched on or off by `scroll_effects` in _config.yml. */
+
+/* ---------- Scroll button ----------
+   Spins as you scroll. After a good way down it turns into an arrow that
+   takes you back to the top. To use your own logo instead of the asterisk,
+   swap the SVG inside _includes/scroll-button.html. */
+.scroll-button {
+  position: fixed;
+  right: var(--gutter);
+  bottom: 4rem;               /* sits above the footer line */
+  z-index: 40;
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--red);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.scroll-button.is-shown { opacity: 1; }
+.scroll-button.is-shown.is-arrow { pointer-events: auto; }
+
+.scroll-spin {
+  position: absolute;
+  inset: 0;
+  transform: rotate(var(--spin, 0deg));  /* set by scroll-button.js */
+}
+.scroll-spin svg,
+.scroll-arrow {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.scroll-arrow { opacity: 0; transform: translateY(0.6rem) scale(0.7); }
+.scroll-button.is-arrow .scroll-spin svg { opacity: 0; transform: scale(0.6); }
+.scroll-button.is-arrow .scroll-arrow { opacity: 1; transform: none; }
+.scroll-button:hover .scroll-arrow { transform: translateY(-0.2rem); }
+
+/* ---------- Soft fade-ins ----------
+   reveal.js adds `reveal-on` to the page and tags things below the first screen.
+   If scripts fail or motion is reduced, everything simply shows as normal. */
+html.reveal-on [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html.reveal-on [data-reveal].is-visible { opacity: 1; transform: none; }
+@media print { html.reveal-on [data-reveal] { opacity: 1; transform: none; } }
+
+/* ---------- Draggable cubes (Home only) ----------
+   Small toys that sit by the closing line. Drag, flick or tap them.
+   The field is just a place to measure from; cubes can be dragged anywhere on the page. */
+.closing { position: relative; }
+.cube-field {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  pointer-events: none;
+}
+.cube {
+  --cube: clamp(2.5rem, 5vw, 3.5rem);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--cube);
+  height: var(--cube);
+  margin: 0;
+  padding: 0;
+  pointer-events: auto;
+  touch-action: none;           /* lets a finger drag the cube instead of scrolling */
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+  will-change: transform;
+  z-index: 5;
+}
+.cube.is-held { cursor: grabbing; z-index: 30; }
+.cube svg { width: 100%; height: 100%; overflow: visible; display: block; pointer-events: none; }
+.cube-top   { fill: var(--red); }
+.cube-left  { fill: color-mix(in srgb, var(--red) 78%, #000); }
+.cube-right { fill: color-mix(in srgb, var(--red) 58%, #000); }
+.cube polygon { stroke: var(--paper); stroke-width: 1.5; stroke-linejoin: round; }
+.cube.is-held svg { transform: scale(1.08); transition: transform 0.2s ease; }
+
+@media print { .scroll-button, .cube-field { display: none; } }

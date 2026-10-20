@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="{{ '/assets/css/colours-and-type.css' | relative_url }}?v={{ site.version }}">
   <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}?v={{ site.version }}">
   <link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}?v={{ site.version }}">
+  {% if site.scroll_effects %}<link rel="stylesheet" href="{{ '/assets/css/effects.css' | relative_url }}?v={{ site.version }}">{% endif %}
   {% if page.page_css %}<link rel="stylesheet" href="{{ '/assets/css/' | append: page.page_css | relative_url }}?v={{ site.version }}">{% endif %}
 
   {% if site.plausible_domain != "" %}<script defer data-domain="{{ site.plausible_domain }}" src="https://plausible.io/js/script.js"></script>{% endif %}
@@ -30,11 +31,16 @@
   </main>
   {% include footer.html %}
   {% include preferences-panel.html %}
+  {% if site.scroll_effects %}{% include scroll-button.html %}{% endif %}
 
   <script src="{{ '/assets/js/preferences.js' | relative_url }}?v={{ site.version }}" defer></script>
   <script src="{{ '/assets/js/media-fallback.js' | relative_url }}?v={{ site.version }}" defer></script>
   <script src="{{ '/assets/js/preview-loader.js' | relative_url }}?v={{ site.version }}" defer></script>
   <script src="{{ '/assets/js/custom-cursor.js' | relative_url }}?v={{ site.version }}" defer></script>
+  {% if site.scroll_effects %}
+  <script src="{{ '/assets/js/scroll-button.js' | relative_url }}?v={{ site.version }}" defer></script>
+  <script src="{{ '/assets/js/reveal.js' | relative_url }}?v={{ site.version }}" defer></script>
+  {% endif %}
   {% if page.page_js %}{% for file in page.page_js %}<script src="{{ '/assets/js/' | append: file | relative_url }}?v={{ site.version }}" defer></script>{% endfor %}{% endif %}
 </body>
 </html>

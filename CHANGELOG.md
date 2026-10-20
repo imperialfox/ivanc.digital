@@ -4,6 +4,15 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.0 - 2026-10-20
+
+Scroll effects test, inspired by the 2023 Readymag site. Switch them all off with `scroll_effects: false` in `_config.yml`.
+
+- Scroll button: an asterisk spins as you scroll, then turns into an arrow that returns you to the top.
+- Soft fade-ins: cards, index rows, closing line and About/Contact sections fade up as they scroll into view. Off with reduced motion.
+- Draggable cubes on Home, by the closing line: drag, flick, tap to hop, stack them. Mouse and touch.
+- New files: `effects.css`, `scroll-button.js`, `reveal.js`, `cubes.js`, `_includes/scroll-button.html`.
+
 ## 0.1.1 - 2026-10-20
 
 - Custom domain ivanc.digital connected (CNAME). `baseurl` set back to empty so links no longer double up the repo name.

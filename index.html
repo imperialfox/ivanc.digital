@@ -3,6 +3,7 @@ title: Home
 page_css: home.css
 page_js:
   - parallax.js
+  - cubes.js
 body_class: home
 ---
 <section class="hero">
@@ -35,4 +36,5 @@ body_class: home
 <section class="closing">
   <p class="closing-line">Let's make something.</p>
   <a class="button" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+  {% if site.scroll_effects %}<div class="cube-field" data-cubes="3" aria-hidden="true"></div>{% endif %}
 </section>

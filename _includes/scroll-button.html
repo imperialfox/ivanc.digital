@@ -1,0 +1,15 @@
+{% comment %}
+  The scroll button. Shown on every page when scroll_effects is true in _config.yml.
+  It spins as you scroll, then becomes an arrow that returns to the top (scroll-button.js).
+  To use your own logo: replace the <svg> inside .scroll-spin with your logo SVG.
+{% endcomment %}
+<button class="scroll-button" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1">
+  <span class="scroll-spin" aria-hidden="true">
+    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round">
+      <path d="M24 5v38M5 24h38M10.6 10.6l26.8 26.8M37.4 10.6L10.6 37.4"/>
+    </svg>
+  </span>
+  <svg class="scroll-arrow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M24 40V9M11 21l13-13 13 13"/>
+  </svg>
+</button>
