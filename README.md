@@ -47,7 +47,7 @@ assets/projects/<name>/    Preview clip, poster and stills for each project
 | `custom-cursor.js` | Round red cursor. Does nothing on touch screens. | Every page |
 | `parallax.js` | Gentle scroll depth on the wordmark. | Home only |
 | `video-loader.js` | Loads the full video only when Play is pressed. | Project pages only |
-| `scroll-button.js` | Asterisk that spins as you scroll, then becomes a back-to-top arrow. | Every page (if `scroll_effects` is true) |
+| `scroll-button.js` | Imperial Fox logo that spins as you scroll, then becomes a back-to-top arrow. | Every page (if `scroll_effects` is true) |
 | `reveal.js` | Soft fade-up of things as they scroll into view. | Every page (if `scroll_effects` is true) |
 | `cubes.js` | Draggable, stackable cubes by the closing line (Easter egg). | Home only |
 

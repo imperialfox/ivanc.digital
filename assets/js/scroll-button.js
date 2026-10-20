@@ -1,4 +1,4 @@
-/* SCROLL BUTTON: the asterisk spins as you scroll, then turns into a back-to-top arrow.
+/* SCROLL BUTTON: the logo spins as you scroll, then turns into a back-to-top arrow.
    Tweak the three numbers below to change how it feels. */
 (function () {
   'use strict';
@@ -6,7 +6,7 @@
   var button = document.querySelector('.scroll-button');
   if (!button) return;
 
-  var SHOW_AFTER = 120;            // px scrolled before the asterisk appears
+  var SHOW_AFTER = 120;            // px scrolled before the logo appears
   var ARROW_AFTER = 1.2;           // screens scrolled before it becomes an arrow
   var DEGREES_PER_PX = 0.35;       // spin speed
 

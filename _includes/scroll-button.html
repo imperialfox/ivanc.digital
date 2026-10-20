@@ -1,12 +1,15 @@
 {% comment %}
   The scroll button. Shown on every page when scroll_effects is true in _config.yml.
   It spins as you scroll, then becomes an arrow that returns to the top (scroll-button.js).
-  To use your own logo: replace the <svg> inside .scroll-spin with your logo SVG.
+  The spinner is the Imperial Fox logo (also saved as assets/images/logo.svg).
+  To use something else: replace the <svg> inside .scroll-spin.
 {% endcomment %}
 <button class="scroll-button" type="button" aria-label="Back to top" aria-hidden="true" tabindex="-1">
   <span class="scroll-spin" aria-hidden="true">
-    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round">
-      <path d="M24 5v38M5 24h38M10.6 10.6l26.8 26.8M37.4 10.6L10.6 37.4"/>
+    <svg class="scroll-logo" viewBox="0 0 568.12 566.73" fill="currentColor">
+      <path d="M546.76,493.64V334.88c1.56-145.1-116-265.06-258.85-267C142.41,66,20.33,187.22,22,335.09q0,79.28,0,158.56H261.35l33-41.86L64.67,451.6q-.06-58.36-.12-116.73C63.69,211,166.06,109.64,287.91,111.16,407.28,112.65,506,212.33,505.75,333.71V493.64Z"/>
+      <path d="M496.87,493.64q0-79.4,0-158.81c.62-116.91-94.11-213.22-209-215C170.53,117.94,71.55,215.38,72.17,334.88V441.47H302.49l8.29-10.69H84.38q-.07-48-.15-95.9c-2.1-114.11,92.17-207.72,203.68-205.67,108.78,2,198.34,94.38,196.26,205.67V493.64Z"/>
+      <path d="M474,493.64V334.88c2-105.6-83-193.26-186.1-195.27C182.08,137.55,92.46,226.36,94.37,334.75q0,42.29,0,84.58l31.23,0-.12-84.41c-3-92,72.56-168.35,162.41-166.93,87.95,1.39,160.28,76.79,157.31,166.86q0,58.47,0,116.94l-93,0-33.09,41.85Z"/>
     </svg>
   </span>
   <svg class="scroll-arrow" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">

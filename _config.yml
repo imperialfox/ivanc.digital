@@ -8,7 +8,7 @@ url: "https://ivanc.digital"
 baseurl: ""
 
 # Site version. Used for cache busting (?v=...) on CSS and JS. Keep in step with CHANGELOG.md.
-version: "0.2.0"
+version: "0.2.1"
 
 # Scroll effects (0.2.0): spinning scroll button that turns into back-to-top, soft fade-ins
 # as you scroll, and the draggable cubes on Home. Set to false to switch them all off.

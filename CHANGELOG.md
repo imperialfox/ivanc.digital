@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.1 - 2026-10-20
+
+- Scroll button now spins the Imperial Fox logo instead of the placeholder asterisk. Logo also saved as `assets/images/logo.svg`.
+
 ## 0.2.0 - 2026-10-20
 
 Scroll effects test, inspired by the 2023 Readymag site. Switch them all off with `scroll_effects: false` in `_config.yml`.

@@ -1,11 +1,11 @@
-/* EFFECTS: scroll button (asterisk that turns into a back-to-top arrow),
+/* EFFECTS: scroll button (logo that spins, then turns into a back-to-top arrow),
    soft fade-ins on scroll, and the draggable cubes Easter egg.
    Everything here is switched on or off by `scroll_effects` in _config.yml. */
 
 /* ---------- Scroll button ----------
-   Spins as you scroll. After a good way down it turns into an arrow that
-   takes you back to the top. To use your own logo instead of the asterisk,
-   swap the SVG inside _includes/scroll-button.html. */
+   Your Imperial Fox logo spins as you scroll. After a good way down it turns into
+   an arrow that takes you back to the top. To change the logo, swap the SVG
+   inside _includes/scroll-button.html. */
 .scroll-button {
   position: fixed;
   right: var(--gutter);
@@ -39,6 +39,7 @@
   height: 100%;
   transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
+.scroll-spin .scroll-logo { inset: 0.2rem; width: calc(100% - 0.4rem); height: calc(100% - 0.4rem); }
 .scroll-arrow { opacity: 0; transform: translateY(0.6rem) scale(0.7); }
 .scroll-button.is-arrow .scroll-spin svg { opacity: 0; transform: scale(0.6); }
 .scroll-button.is-arrow .scroll-arrow { opacity: 1; transform: none; }
