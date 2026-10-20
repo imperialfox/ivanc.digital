@@ -21,7 +21,7 @@ _includes/                 nav, footer (with the light/dark switch), work grid, 
 assets/css/                Styles, split by job (see below)
 assets/js/                 Small scripts, one job each (see below)
 assets/fonts/              Self-hosted fonts (.woff2)
-assets/images/             Favicon, logo, social preview, wordmark loop
+assets/images/             Favicon, logo, About portrait (ivan-portrait-480/768.webp), social preview, wordmark loop
 assets/projects/<name>/    Preview clip, poster and stills for each project
 ```
 

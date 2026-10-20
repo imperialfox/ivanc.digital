@@ -4,6 +4,12 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.15 - 2026-10-21
+
+- About page: the portrait placeholder is replaced with Ivan's photo. It is shown uncropped at 3:4 (the placeholder was 4:5).
+- The photo is exported as WebP at two sizes (`ivan-portrait-480.webp`, 71 KB, and `ivan-portrait-768.webp`, 175 KB) in `assets/images/`, down from a 352 KB JPEG. The browser picks the right one with `srcset`. Width and height are set so the layout never jumps, and it fades in over the palette block and uses the usual "Image unavailable" panel if it fails.
+- The original's embedded location and camera data was stripped, and the colour was converted from Display P3 to sRGB so it looks the same on every screen.
+
 ## 0.2.14 - 2026-10-20
 
 - Film grain is switched off for now, because grain over a large area can slow scrolling. It is not deleted: set `grain: true` in `_config.yml` to turn it back on (live-text wordmark only). The grain CSS stays in `home.css`.
