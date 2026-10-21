@@ -4,6 +4,11 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.18 - 2026-10-21
+
+- About page: the gear list is filled in, kept short on purpose: Fujifilm X-T5 for cameras, DaVinci Resolve Studio for editing and grading. Supporting kit (audio, gimbal, monitoring, storage) is not listed, since visitors don't need it.
+- Lenses is still a placeholder until the lens list is confirmed.
+
 ## 0.2.17 - 2026-10-21
 
 - About page portrait swapped for the version graded in DaVinci Resolve. The black bars were cropped off, leaving a clean 3:4 frame that fits the existing portrait shape, so no layout change.
