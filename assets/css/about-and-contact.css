@@ -40,6 +40,10 @@
 }
 .about-text .lead { max-width: 60ch; font-family: var(--font-display); font-weight: 400; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.01em; }
 .about-section { padding-bottom: var(--space); }
+/* "How it started": the story on the left, a photo on the right. On phones the photo sits below the text. */
+.about-story { display: grid; gap: 2rem; }
+@media (min-width: 48rem) { .about-story { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; align-items: start; } }
+.about-figure { margin: 0; max-width: 28rem; }
 .gear { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1.5rem; }
 @media (min-width: 48rem) { .gear { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .gear h3 { font-family: var(--font-ui); font-weight: 500; font-size: 0.9375rem; margin-bottom: 0.35rem; }

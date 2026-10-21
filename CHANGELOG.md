@@ -4,6 +4,11 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.20 - 2026-10-21
+
+- About page, "How it started": a photo (the bus mirror shot) now sits beside the story on wide screens and below it on phones. It is exported as WebP at two sizes (`bus-mirror-480.webp`, 18 KB, and `bus-mirror-768.webp`, 37 KB, from a 215 KB JPEG; the original is only 793 px wide, so there is no larger size). Embedded camera and location data was stripped. It lazy-loads, keeps its shape while loading, fades in and uses the usual "Image unavailable" panel if it fails.
+- The layout is a small `.about-story` and `.about-figure` rule in `about-and-contact.css`.
+
 ## 0.2.19 - 2026-10-21
 
 - About page paragraphs restyled in the spirit of the Adriano Santos reference: Inter Tight Medium (already on the site, no new font file), a little larger, snug line spacing (1.2), slight negative letter spacing, a narrower column (48 characters) and one blank line between paragraphs. The opening line stays in Instrument Serif.
