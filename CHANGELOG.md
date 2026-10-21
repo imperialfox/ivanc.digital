@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.28 - 2026-10-21
+
+- Beth & Kyle proposal: "Copy my choices" now uses the classic select-and-copy method first (more reliable on iPhone Safari), with the newer clipboard method as the backup.
+
 ## 0.2.27 - 2026-10-21
 
 - Beth & Kyle proposal: the email button no longer pre-fills the message (some mail apps showed it as %20 and %2C codes). It now just opens a blank email to info@ivanc.digital. Use Copy my choices, then paste.

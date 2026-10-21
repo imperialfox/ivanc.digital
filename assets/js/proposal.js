@@ -70,15 +70,24 @@
     if (!btn || !box) return;
     var timer;
     function said(msg) { note.textContent = msg; clearTimeout(timer); timer = setTimeout(function () { note.textContent = ''; }, 3500); }
-    function fallback() {
-      box.focus(); box.select();
-      try { said(document.execCommand('copy') ? 'Copied. Now paste it into a message to me.' : 'Press and hold the text to copy it.'); }
-      catch (e) { said('Press and hold the text to copy it.'); }
+    /* iPhone-friendly copy: select the box text and use the classic copy command first, then the newer clipboard method. */
+    function classic() {
+      var ok = false;
+      try {
+        box.readOnly = false; box.focus(); box.select(); box.setSelectionRange(0, box.value.length);
+        ok = document.execCommand('copy');
+        box.readOnly = true; box.blur();
+        var sel = window.getSelection && window.getSelection(); if (sel) sel.removeAllRanges();
+      } catch (e) { box.readOnly = true; }
+      return ok;
+    }
+    function modern() {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(box.value).then(function () { said('Copied. Now paste it into a message to me.'); }, function () { said('Press and hold the text to copy it.'); });
+      } else { said('Press and hold the text to copy it.'); }
     }
     btn.addEventListener('click', function () {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(box.value).then(function () { said('Copied. Now paste it into a message to me.'); }, fallback);
-      } else { fallback(); }
+      if (classic()) said('Copied. Now paste it into a message to me.'); else modern();
     });
   })();
   
