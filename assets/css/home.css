@@ -177,3 +177,38 @@ a.index-row:hover .index-project { color: var(--red-deep); }
   font-size: clamp(1.75rem, 5vw, 3.25rem);
   line-height: 1.05;
 }
+
+/* ---------- Maintenance mode (maintenance: true in _config.yml) ----------
+   Home shows only the wordmark, motto, a short note and the social links.
+   The hero fills the screen so the footer sits at the bottom instead of floating mid-page. */
+.hero.is-maintenance {
+  min-height: calc(100svh - 7rem);
+  display: flex;
+  flex-direction: column;
+}
+.maintenance { margin-top: auto; padding-top: var(--space); }
+.maintenance-note {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.6875rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding-bottom: 0.75rem;
+}
+.maintenance-links { display: flex; flex-direction: column; max-width: 32rem; }
+.maintenance-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.maintenance-link:last-child { border-bottom: 1px solid color-mix(in srgb, var(--ink) 18%, transparent); }
+.maintenance-link:hover, .maintenance-link:focus-visible { color: var(--red-deep); }

@@ -7,7 +7,7 @@ page_js:
   - gallery-loader.js
 body_class: home
 ---
-<section class="hero{% if site.grain and site.wordmark_video != true %} grain{% endif %}">
+<section class="hero{% if site.grain and site.wordmark_video != true %} grain{% endif %}{% if site.maintenance %} is-maintenance{% endif %}">
   {% if site.wordmark_video %}
     <div class="wordmark-media" data-parallax="0.08" aria-hidden="true">
       <video class="media-item wordmark-light" data-quiet autoplay muted loop playsinline poster="{{ '/assets/images/wordmark/wordmark-light-poster.webp' | relative_url }}">
@@ -28,8 +28,20 @@ body_class: home
   {% endif %}
 
   <p class="motto" data-parallax="0.04"><em>{{ site.motto_lead }}</em> {{ site.motto_rest }}</p>
+
+  {% if site.maintenance %}
+  {% comment %} MAINTENANCE MODE (maintenance: true in _config.yml). Only the wordmark, motto, this line and the links show. {% endcomment %}
+  <div class="maintenance">
+    <p class="maintenance-note">Portfolio being updated. New work soon.</p>
+    <nav class="maintenance-links" aria-label="Social links">
+      <a class="maintenance-link" href="{{ site.data.links.instagram }}"><span>Instagram</span><span aria-hidden="true">&nearr;</span></a>
+      <a class="maintenance-link" href="mailto:{{ site.data.links.email }}"><span>{{ site.data.links.email }}</span><span aria-hidden="true">&rarr;</span></a>
+    </nav>
+  </div>
+  {% endif %}
 </section>
 
+{% unless site.maintenance %}
 {% include work-grid.html %}
 
 {% include gallery.html %}
@@ -41,3 +53,4 @@ body_class: home
   <a class="button" href="{{ '/contact/' | relative_url }}">Get in touch</a>
   {% if site.scroll_effects %}<div class="cube-field" data-cubes="3" aria-hidden="true"></div>{% endif %}
 </section>
+{% endunless %}

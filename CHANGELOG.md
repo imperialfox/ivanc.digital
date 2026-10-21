@@ -4,6 +4,13 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.30 - 2026-10-21
+
+- Home is in maintenance mode while the work is still placeholders. It now shows only the wordmark, the motto, a short "Portfolio being updated. New work soon." line and two links: Instagram and email. The work grid, gallery, index list, closing line and cubes are hidden, and the "Work" menu link is hidden site-wide.
+- Switch: `maintenance: true` in `_config.yml`. Set it to `false` and the full Home comes back exactly as before; nothing was deleted.
+- `_data/links.yml` now has the real email (info@ivanc.digital) and Instagram (instagram.com/ivanc.digital), so the footer and Contact page use them too. Booking and Vimeo are still placeholders.
+- About, Contact and the Beth & Kyle proposal are unchanged.
+
 ## 0.2.29 - 2026-10-21
 
 - Beth & Kyle proposal: removed the Copy my choices and Email me buttons. The choices box stays. One tap selects all of it so the phone's own Copy button appears, and it pastes as plain text.

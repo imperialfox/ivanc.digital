@@ -8,7 +8,14 @@ url: "https://ivanc.digital"
 baseurl: ""
 
 # Site version. Used for cache busting (?v=...) on CSS and JS. Keep in step with CHANGELOG.md.
-version: "0.2.29"
+version: "0.2.30"
+
+# Maintenance mode for Home (0.2.30).
+# true  = Home shows only the wordmark, the motto, a short "being updated" line and the social links.
+#         The work grid, gallery, index list and the "Work" menu link are hidden. About, Contact and
+#         the Beth & Kyle proposal are not affected.
+# false = the full Home comes back exactly as it was. Change this one word to switch.
+maintenance: true
 
 # Scroll effects (0.2.0): spinning scroll button that turns into back-to-top, soft fade-ins
 # as you scroll, and the draggable cubes on Home. Set to false to switch them all off.

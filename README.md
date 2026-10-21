@@ -9,7 +9,7 @@ Status: first scaffold with placeholders. See `CHANGELOG.md`.
 ## Folder map
 
 ```
-index.html                 Home (wordmark, motto, work grid, gallery, index list)
+index.html                 Home (wordmark, motto, work grid, gallery, index list). maintenance: true in _config.yml shows only the wordmark, motto and social links
 about.html                 About
 contact.html               Contact
 404.html                   Page not found
