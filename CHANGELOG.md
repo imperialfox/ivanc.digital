@@ -4,6 +4,14 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.23 - 2026-10-21
+
+- Beth & Kyle proposal is now a journey: one long page told as the day (cover and letter, a looping "How I film" clip, the day in five moments, the two films, a song question, add-ons with a live total including VAT and deposit, the steps from yes to delivery, and a thank-you). Dates for the wedding (Thursday 21 October 2027), balance and delivery are written in.
+- New layout `_layouts/proposal.html` (no site menu or footer), styles in `assets/css/proposal.css`, script in `assets/js/proposal.js`, files in `assets/proposals/beth-and-kyle/`.
+- Light by default with the footer "Change appearance" switch, same rule as the rest of the site.
+- Optional "A message from me" video: put `ivan-hello.mp4` (and `ivan-hello-poster.jpg`) in `assets/proposals/beth-and-kyle/` and the section appears on its own. Without the file it stays hidden.
+- The earlier price-list version is saved in git as the tag `beth-kyle-v1`.
+
 ## 0.2.22 - 2026-10-21
 
 - Link previews: any page can now set `og_image` (and optionally `og_title`) in its front matter, so a shared link shows an image and title in WhatsApp, iMessage and similar. The Beth & Kyle proposal uses a text-only card, `assets/images/proposals/beth-and-kyle-preview.png`.

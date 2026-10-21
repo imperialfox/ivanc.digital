@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  {% if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  {% if page.og_image %}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ page.og_title | default: page.title }}">
+  <meta property="og:description" content="{{ page.description | default: site.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ page.og_image | absolute_url }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {% endif %}
+  <meta name="theme-color" content="#F4F0E6">
+  <link rel="icon" href="{{ '/assets/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+
+  <script>
+    /* Light by default, like the rest of the site. A saved dark choice applies before first paint. */
+    var r = document.documentElement;
+    r.classList.add('js');
+    try { r.setAttribute('data-theme', localStorage.getItem('theme') === 'dark' ? 'dark' : 'light'); } catch (e) { r.setAttribute('data-theme', 'light'); }
+  </script>
+
+  <link rel="preload" href="{{ '/assets/fonts/inter-tight-500.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/assets/css/colours-and-type.css' | relative_url }}?v={{ site.version }}">
+  <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}?v={{ site.version }}">
+  <link rel="stylesheet" href="{{ '/assets/css/proposal.css' | relative_url }}?v={{ site.version }}">
+</head>
+<body class="{{ page.body_class }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{ content }}
+  <script src="{{ '/assets/js/proposal.js' | relative_url }}?v={{ site.version }}" defer></script>
+</body>
+</html>
