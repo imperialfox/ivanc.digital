@@ -139,26 +139,35 @@
     });
   })();
   
-  /* ---- Looping clip: plays only while on screen; calm fallback if it fails ---- */
+  /* ---- Looping clip: plays while on screen; tap to play if the phone blocks autoplay (Low Power Mode) ---- */
   (function () {
     var clip = document.getElementById('clip'), v = document.getElementById('clipVideo');
     if (!clip || !v) return;
+    var tap = document.createElement('button');
+    tap.type = 'button'; tap.className = 'clip-play'; tap.hidden = true;
+    tap.setAttribute('aria-label', 'Play the clip');
+    tap.innerHTML = '<span aria-hidden="true"></span>';
+    clip.appendChild(tap);
     function fail() { clip.classList.add('failed'); }
+    function tryPlay() {
+      var p = v.play();
+      if (p && p.then) p.then(function () { tap.hidden = true; }, function () { tap.hidden = false; });
+    }
     v.addEventListener('error', fail, true);
     var sources = v.querySelectorAll('source');
     if (sources.length) sources[sources.length - 1].addEventListener('error', fail);
-    var slow = setTimeout(function () { if (v.readyState < 2 && !v.error) fail(); }, 10000);
-    v.addEventListener('loadeddata', function () { clearTimeout(slow); clip.classList.remove('failed'); });
+    v.addEventListener('loadeddata', function () { clip.classList.remove('failed'); });
+    v.addEventListener('playing', function () { tap.hidden = true; clip.classList.remove('failed'); });
+    tap.addEventListener('click', tryPlay);
     var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (calm) { v.controls = true; return; }
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
-          else v.pause();
+          if (e.isIntersecting) tryPlay(); else v.pause();
         });
       }, { threshold: 0.25 }).observe(clip);
-    } else { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    } else { tryPlay(); }
   })();
   
   /* ---- Appearance: same switch rules as the rest of the site (light by default, dark on request) ---- */

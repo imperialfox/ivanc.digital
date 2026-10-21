@@ -202,3 +202,10 @@ footer button:focus-visible { outline: 2px solid var(--accent); outline-offset: 
 .btn-line.ghost { background: transparent; color: var(--accent); }
 .btn-line:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 .copied { font: 400 .875rem var(--font-body); color: var(--muted); }
+
+/* Tap-to-play, only shown if the phone blocks autoplay */
+.clip-play { all: unset; box-sizing: border-box; position: absolute; inset: 0; cursor: pointer; display: grid; place-items: center; }
+.clip-play[hidden] { display: none; }
+.clip-play span { width: 64px; height: 64px; border-radius: 50%; background: rgba(10,10,10,.6); display: grid; place-items: center; }
+.clip-play span::before { content: ""; border-style: solid; border-width: 10px 0 10px 17px; border-color: transparent transparent transparent #F4F0E6; margin-left: 4px; }
+.clip-play:focus-visible { outline: 2px solid var(--accent, var(--red-deep)); outline-offset: -4px; }
