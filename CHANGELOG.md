@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.25 - 2026-10-21
+
+- Beth & Kyle proposal: a "Copy my choices" box at the end. It writes their chosen extras, total, deposit, balance and song into a ready-to-paste message, with a Copy button and an Open in email link. The song question now has a small text box that feeds into it.
+
 ## 0.2.24 - 2026-10-21
 
 - Beth & Kyle proposal: travel included within 100 miles of base (was 50). Extra distance still £0.45 per mile, return.
