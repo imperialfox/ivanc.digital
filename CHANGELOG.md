@@ -6,7 +6,7 @@ Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y
 
 ## 0.2.25 - 2026-10-21
 
-- Beth & Kyle proposal: a "Copy my choices" box at the end. It writes their chosen extras, total, deposit, balance and song into a ready-to-paste message, with a Copy button and an Open in email link. The song question now has a small text box that feeds into it.
+- Beth & Kyle proposal: a "Copy my choices" box at the end. It lists their chosen extras, total, deposit, balance and song as plain ready-to-paste text, with a Copy button and an Open in email link. The song question now has a small text box that feeds into it.
 
 ## 0.2.24 - 2026-10-21
 

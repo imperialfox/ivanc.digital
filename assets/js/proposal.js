@@ -42,8 +42,6 @@
     });
     var songEl = document.getElementById('song'), song = songEl ? songEl.value.trim() : '';
     var lines = [
-      "Hi Ivan, it's Beth & Kyle. Here's what we'd like:",
-      '',
       'Wedding: Thursday 21 October 2027',
       'Package: Full Day Video Coverage, Feature Film and Highlights Reel',
       'Extras: ' + (extras.length ? extras.join(', ') : 'None'),
@@ -51,7 +49,6 @@
       'Deposit: ' + money(dep) + '. Balance: ' + money(total - dep) + ' by 7 October 2027'
     ];
     if (song) lines.push('Our song: ' + song);
-    lines.push('', 'Thank you!');
     box.value = lines.join('\n');
     box.style.height = 'auto'; box.style.height = (box.scrollHeight + 2) + 'px';
     var mail = document.getElementById('mail');
