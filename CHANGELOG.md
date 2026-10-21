@@ -4,6 +4,11 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.17 - 2026-10-21
+
+- About page portrait swapped for the version graded in DaVinci Resolve. The black bars were cropped off, leaving a clean 3:4 frame that fits the existing portrait shape, so no layout change.
+- Re-exported as WebP at three sizes: `ivan-portrait-480.webp` (65 KB), `ivan-portrait-768.webp` (143 KB) and a new `ivan-portrait-1080.webp` (230 KB) for sharper display on large and high-density screens. The browser picks the right one with `srcset`. Colours are untouched (the file was already sRGB).
+
 ## 0.2.16 - 2026-10-21
 
 - About page: the placeholder text is replaced with Ivan's own copy, written in first person: the opening line, two short paragraphs about the studio and the work, and the "How it started" story. The gear and software list is still placeholder text until the kit list is ready.
