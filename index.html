@@ -4,6 +4,7 @@ page_css: home.css
 page_js:
   - parallax.js
   - cubes.js
+  - gallery-loader.js
 body_class: home
 ---
 <section class="hero{% if site.grain and site.wordmark_video != true %} grain{% endif %}">
@@ -30,6 +31,8 @@ body_class: home
 </section>
 
 {% include work-grid.html %}
+
+{% include gallery.html %}
 
 {% include work-index.html %}
 

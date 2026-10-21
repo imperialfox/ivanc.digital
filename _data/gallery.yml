@@ -1,0 +1,22 @@
+# The gallery on Home (sits between the work grid and the index list).
+# It is a Playbook embed that only loads when someone presses "View gallery".
+
+# true = show the gallery on Home. false = hide it.
+enabled: true
+
+# Small label above the gallery.
+title: "Fashion"
+
+# Optional one-line caption under the label. Leave empty ("") for none.
+caption: ""
+
+# The Playbook embed link (the src of the embed code, in quotes).
+embed: "https://www.playbook.com/e/ivan-c/38SbxbUj45oo9qLSDkhizSTF?theme=gallery&assetNumber=3&displaySize=medium"
+
+# Optional normal Playbook link, offered as "Open the gallery on Playbook" if the embed fails.
+# Leave empty ("") to show only "Try again".
+watch: ""
+
+# Optional still shown behind the "View gallery" button, for example /assets/images/gallery-poster.webp
+# Leave empty ("") for a plain palette block.
+poster: ""

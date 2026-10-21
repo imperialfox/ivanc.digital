@@ -8,6 +8,7 @@
 
   var SELECTORS = [
     '.work-grid .card',
+    '.gallery',
     '.index-row:not(.index-head)',
     '.closing',
     '.page-head',

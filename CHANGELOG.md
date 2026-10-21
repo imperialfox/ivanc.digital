@@ -4,6 +4,16 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.21 - 2026-10-21
+
+- Home: a "Fashion" gallery section sits between the work grid and the index list. It is a Playbook embed, set up like the video embeds: it starts as a plain palette block with a "View gallery" button, and nothing from Playbook loads until the button is pressed. This keeps third-party scripts off the first load and stops the embed catching scroll on phones.
+- If the gallery doesn't load within about 10 seconds, it swaps to the usual calm panel ("This gallery is unavailable right now") with Try again, plus an "Open the gallery on Playbook" link once one is set.
+- Height is 600px at most and shorter on small screens (`clamp(26rem, 75svh, 37.5rem)`), so it never fills a whole phone screen. It fades up with the rest of Home.
+- Everything editable is in `_data/gallery.yml`: on/off, the label, an optional caption, the embed link, an optional Playbook page link and an optional poster still. Set `enabled: false` to hide the section.
+- New files: `_includes/gallery.html`, `assets/js/gallery-loader.js` (Home only), `_data/gallery.yml`. Styles are in `home.css`; `reveal.js` lists the new section.
+- Known limit: the panel appears when the gallery stalls or the frame reports an error. If Playbook refuses the connection outright, the browser may show its own error page inside the frame, because a page can't see inside another site's frame.
+- Open: the "watch" link is empty because the normal Playbook page address is not confirmed, and there is no poster still yet.
+
 ## 0.2.20 - 2026-10-21
 
 - About page, "How it started": a photo (the bus mirror shot) now sits beside the story on wide screens and below it on phones. It is exported as WebP at two sizes (`bus-mirror-480.webp`, 18 KB, and `bus-mirror-768.webp`, 37 KB, from a 215 KB JPEG; the original is only 793 px wide, so there is no larger size). Embedded camera and location data was stripped. It lazy-loads, keeps its shape while loading, fades in and uses the usual "Image unavailable" panel if it fails.

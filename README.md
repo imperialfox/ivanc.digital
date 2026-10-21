@@ -9,15 +9,16 @@ Status: first scaffold with placeholders. See `CHANGELOG.md`.
 ## Folder map
 
 ```
-index.html                 Home (wordmark, motto, work grid, index list)
+index.html                 Home (wordmark, motto, work grid, gallery, index list)
 about.html                 About
 contact.html               Contact
 404.html                   Page not found
 _config.yml                Site settings (motto, version, wordmark video switch, analytics)
 _data/links.yml            Email, socials, booking link, optional extras
+_data/gallery.yml          The Playbook gallery on Home: on/off, label, embed link, optional poster
 _projects/                 One small file per piece of work
 _layouts/                  default.html (every page) and project.html (each project page)
-_includes/                 nav, footer (with the light/dark switch), work grid, index list, project card, preferences panel (switched off)
+_includes/                 nav, footer (with the light/dark switch), work grid, gallery, index list, project card, preferences panel (switched off)
 assets/css/                Styles, split by job (see below)
 assets/js/                 Small scripts, one job each (see below)
 assets/fonts/              Self-hosted fonts (.woff2)
@@ -32,7 +33,7 @@ assets/projects/<name>/    Preview clip, poster and stills for each project
 | `colours-and-type.css` | The reds, cream, black and the three typefaces. Change the look here. |
 | `base.css` | Page defaults, spacing, keyboard focus, reduced motion. |
 | `components.css` | Nav, footer, buttons, cards, media blocks, "unavailable" panel, footer light/dark switch, cursor, old preferences panel (switched off). |
-| `home.css` | Wordmark, grain, motto, work grid, index list, closing line. |
+| `home.css` | Wordmark, grain, motto, work grid, gallery, index list, closing line. |
 | `about-and-contact.css` | About and Contact pages. |
 | `project.css` | Individual project pages. |
 | `effects.css` | Scroll button, fade-ins and cubes. Loaded only when `scroll_effects` is true. |
@@ -47,6 +48,7 @@ assets/projects/<name>/    Preview clip, poster and stills for each project
 | `custom-cursor.js` | Round red cursor. Does nothing on touch screens. | Every page |
 | `parallax.js` | Gentle scroll depth on the wordmark. | Home only |
 | `video-loader.js` | Loads the full video only when Play is pressed. | Project pages only |
+| `gallery-loader.js` | Loads the Playbook gallery only when "View gallery" is pressed. | Home only |
 | `scroll-button.js` | Asterisk that spins as you scroll, then fades into a back-to-top arrow. | Every page (if `scroll_effects` is true) |
 | `reveal.js` | Soft fade-up of things as they scroll into view. | Every page (if `scroll_effects` is true) |
 | (pinned logo) | No script: `_includes/pinned-logo.html` plus styles in `effects.css`. Off with `pinned_logo: false`. | Every page |

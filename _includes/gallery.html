@@ -1,0 +1,19 @@
+{% comment %}
+  The Playbook gallery on Home. Settings live in _data/gallery.yml.
+  Nothing from Playbook loads until the button is pressed (see assets/js/gallery-loader.js).
+{% endcomment %}
+{% assign g = site.data.gallery %}
+{% if g.enabled and g.embed != "" %}
+<section class="gallery" aria-label="{{ g.title | escape }}">
+  <div class="gallery-head">
+    <h2 class="gallery-title">{{ g.title }}</h2>
+    {% if g.caption != "" %}<p class="gallery-caption">{{ g.caption }}</p>{% endif %}
+  </div>
+  <div class="gallery-frame media">
+    <button class="gallery-button" type="button" data-embed="{{ g.embed | escape }}" data-watch="{{ g.watch | escape }}" aria-label="View the {{ g.title | escape }} gallery">
+      {% if g.poster != "" %}<img class="media-item" data-quiet src="{{ g.poster | relative_url }}" alt="" loading="lazy">{% endif %}
+      <span class="gallery-label">View gallery</span>
+    </button>
+  </div>
+</section>
+{% endif %}
