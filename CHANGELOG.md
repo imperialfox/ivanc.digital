@@ -4,6 +4,11 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.22 - 2026-10-21
+
+- Link previews: any page can now set `og_image` (and optionally `og_title`) in its front matter, so a shared link shows an image and title in WhatsApp, iMessage and similar. The Beth & Kyle proposal uses a text-only card, `assets/images/proposals/beth-and-kyle-preview.png`.
+- Sent links keep their old preview in some apps for a while after a change.
+
 ## 0.2.21 - 2026-10-21
 
 - Home: a "Fashion" gallery section sits between the work grid and the index list. It is a Playbook embed, set up like the video embeds: it starts as a plain palette block with a "View gallery" button, and nothing from Playbook loads until the button is pressed. This keeps third-party scripts off the first load and stops the embed catching scroll on phones.
