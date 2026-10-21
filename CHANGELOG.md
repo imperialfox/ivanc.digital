@@ -7,6 +7,7 @@ Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y
 ## 0.2.24 - 2026-10-21
 
 - Beth & Kyle proposal: travel included within 100 miles of base (was 50). Extra distance still £0.45 per mile, return.
+- Beth & Kyle proposal address is now `/proposals/beth-and-kyle-hygetsbg/` (random code so it cannot be guessed). The old address stops working once this is live.
 
 ## 0.2.23 - 2026-10-21
 
