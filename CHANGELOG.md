@@ -4,6 +4,10 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.29 - 2026-10-21
+
+- Beth & Kyle proposal: removed the Copy my choices and Email me buttons. The choices box stays. One tap selects all of it so the phone's own Copy button appears, and it pastes as plain text.
+
 ## 0.2.28 - 2026-10-21
 
 - Beth & Kyle proposal: "Copy my choices" now uses the classic select-and-copy method first (more reliable on iPhone Safari), with the newer clipboard method as the backup.

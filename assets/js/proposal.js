@@ -64,31 +64,13 @@
   if (songField) songField.addEventListener('input', refresh);
   refresh();
 
-  /* ---- Copy my choices ---- */
+  /* ---- Choices box: one tap selects everything, so the phone's own Copy button appears ---- */
   (function () {
-    var btn = document.getElementById('copy'), box = document.getElementById('summary'), note = document.getElementById('copied');
-    if (!btn || !box) return;
-    var timer;
-    function said(msg) { note.textContent = msg; clearTimeout(timer); timer = setTimeout(function () { note.textContent = ''; }, 3500); }
-    /* iPhone-friendly copy: select the box text and use the classic copy command first, then the newer clipboard method. */
-    function classic() {
-      var ok = false;
-      try {
-        box.readOnly = false; box.focus(); box.select(); box.setSelectionRange(0, box.value.length);
-        ok = document.execCommand('copy');
-        box.readOnly = true; box.blur();
-        var sel = window.getSelection && window.getSelection(); if (sel) sel.removeAllRanges();
-      } catch (e) { box.readOnly = true; }
-      return ok;
-    }
-    function modern() {
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(box.value).then(function () { said('Copied. Now paste it into a message to me.'); }, function () { said('Press and hold the text to copy it.'); });
-      } else { said('Press and hold the text to copy it.'); }
-    }
-    btn.addEventListener('click', function () {
-      if (classic()) said('Copied. Now paste it into a message to me.'); else modern();
-    });
+    var box = document.getElementById('summary');
+    if (!box) return;
+    function all() { try { box.select(); box.setSelectionRange(0, box.value.length); } catch (e) {} }
+    box.addEventListener('click', all);
+    box.addEventListener('focus', all);
   })();
   
   /* ---- The day: one stop open at a time ---- */
