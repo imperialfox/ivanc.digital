@@ -51,8 +51,6 @@
     if (song) lines.push('Our song: ' + song);
     box.value = lines.join('\n');
     box.style.height = 'auto'; box.style.height = (box.scrollHeight + 2) + 'px';
-    var mail = document.getElementById('mail');
-    if (mail) mail.href = 'mailto:info@ivanc.digital?subject=' + encodeURIComponent('Beth & Kyle: our choices') + '&body=' + encodeURIComponent(box.value);
   }
   document.querySelectorAll('.addon .toggle').forEach(function (btn) {
     btn.addEventListener('click', function () {

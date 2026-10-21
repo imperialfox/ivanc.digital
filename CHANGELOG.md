@@ -4,13 +4,17 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.27 - 2026-10-21
+
+- Beth & Kyle proposal: the email button no longer pre-fills the message (some mail apps showed it as %20 and %2C codes). It now just opens a blank email to info@ivanc.digital. Use Copy my choices, then paste.
+
 ## 0.2.26 - 2026-10-21
 
 - Beth & Kyle proposal: the looping clip now shows a small play button if the phone blocks autoplay (for example iPhone Low Power Mode), and loads fully ahead of time. Removed the 10 second "Preview unavailable" timer that could hide a slow-loading clip.
 
 ## 0.2.25 - 2026-10-21
 
-- Beth & Kyle proposal: a "Copy my choices" box at the end. It lists their chosen extras, total, deposit, balance and song as plain ready-to-paste text, with a Copy button and an Open in email link. The song question now has a small text box that feeds into it.
+- Beth & Kyle proposal: a "Copy my choices" box at the end. It lists their chosen extras, total, deposit, balance and song as plain ready-to-paste text, with a Copy button. The song question now has a small text box that feeds into it.
 
 ## 0.2.24 - 2026-10-21
 
