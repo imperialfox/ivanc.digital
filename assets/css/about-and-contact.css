@@ -25,8 +25,20 @@
 /* ---------- About ---------- */
 .about-grid { display: grid; gap: 2rem; padding-bottom: var(--space); }
 @media (min-width: 48rem) { .about-grid { grid-template-columns: 1fr 1.4fr; gap: 3rem; align-items: start; } }
-.about-text p { max-width: 60ch; margin-bottom: 1rem; }
-.about-text .lead { font-family: var(--font-display); font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.01em; }
+/* About paragraphs: tight, medium-weight grotesque with a narrow column, in the spirit of
+   Adriano Santos. Inter Tight Medium, snug line spacing, one blank line between paragraphs.
+   To go back to the softer body style, use font-family var(--font-body), weight 400,
+   line-height 1.5, letter-spacing 0, max-width 60ch and margin-bottom 1rem. */
+.about-text p {
+  max-width: 48ch;
+  margin-bottom: 1.2em;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 1.0625rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.about-text .lead { max-width: 60ch; font-family: var(--font-display); font-weight: 400; font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.15; letter-spacing: -0.01em; }
 .about-section { padding-bottom: var(--space); }
 .gear { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 1.5rem; }
 @media (min-width: 48rem) { .gear { grid-template-columns: repeat(4, minmax(0, 1fr)); } }

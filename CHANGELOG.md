@@ -4,6 +4,11 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.19 - 2026-10-21
+
+- About page paragraphs restyled in the spirit of the Adriano Santos reference: Inter Tight Medium (already on the site, no new font file), a little larger, snug line spacing (1.2), slight negative letter spacing, a narrower column (48 characters) and one blank line between paragraphs. The opening line stays in Instrument Serif.
+- The styling is one rule in `about-and-contact.css`, with a comment listing the old values in case it needs to go back.
+
 ## 0.2.18 - 2026-10-21
 
 - About page: the gear list is filled in, kept short on purpose: Fujifilm X-T5 for cameras, DaVinci Resolve Studio for editing and grading. Supporting kit (audio, gimbal, monitoring, storage) is not listed, since visitors don't need it.
