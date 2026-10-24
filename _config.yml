@@ -8,7 +8,7 @@ url: "https://ivanc.digital"
 baseurl: ""
 
 # Site version. Used for cache busting (?v=...) on CSS and JS. Keep in step with CHANGELOG.md.
-version: "0.2.30"
+version: "0.2.31"
 
 # Maintenance mode for Home (0.2.30).
 # true  = Home shows only the wordmark, the motto, a short "being updated" line and the social links.

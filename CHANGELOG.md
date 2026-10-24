@@ -4,6 +4,13 @@ All notable changes to ivanc.digital. Newest first. Version numbers are in `_con
 
 Numbering (open item, proposed): `0.x.0` for new features while building, `0.x.y` for fixes, `1.0.0` for the first public launch.
 
+## 0.2.31 - 2026-10-24
+
+- New page: general wedding pricing at `/weddings/`, a catch-all copy of the Beth & Kyle proposal for any couple. Same layout, prices, extras and terms, with no names or fixed dates. Unlisted and `noindex`, like the proposals: share the address directly.
+- The couple adds their date and venue in a box at the end, and it goes into their copied choices. Balance reads "2 weeks before the wedding" instead of a set date.
+- `proposal.js` now reads the base total and balance wording from `<main>` (`data-base`, `data-balance-due`), so each pricing page can have its own numbers. Beth & Kyle is unchanged.
+- Looping clip copied to `assets/proposals/weddings/`.
+
 ## 0.2.30 - 2026-10-21
 
 - Home is in maintenance mode while the work is still placeholders. It now shows only the wordmark, the motto, a short "Portfolio being updated. New work soon." line and two links: Instagram and email. The work grid, gallery, index list, closing line and cubes are hidden, and the "Work" menu link is hidden site-wide.

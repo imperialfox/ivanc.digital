@@ -1,0 +1,275 @@
+---
+title: Wedding films
+description: Wedding film pricing from Ivan, ivanc.digital.
+permalink: /weddings/
+layout: proposal
+body_class: page-proposal
+noindex: true
+og_title: Wedding films by Ivan, ivanc.digital
+---
+{% comment %}
+  GENERAL WEDDING PRICING. A catch-all version of the Beth & Kyle proposal for any couple.
+  Nothing on the site links here: share the address directly (ivanc.digital/weddings/).
+  noindex: true (above) asks search engines to leave it out.
+
+  Files for this page live in assets/proposals/weddings/:
+    rach-bbq-loop.mp4 / .webm and rach-bbq-poster.jpg  the looping clip in "How I film"
+    ivan-hello.mp4 and ivan-hello-poster.jpg           OPTIONAL: your message to camera. The "A message
+                                                       from me" section stays hidden until ivan-hello.mp4 exists.
+
+  The price numbers are plain text further down (coverage, feature film, the cover line) and in the
+  add-on cards (data-price). The base total is data-base on <main> below. Change them all together.
+  The couple types their date into the box at the end, and it goes into their copied choices.
+  To make another proposal, copy this file, change the permalink, the words and the media folder.
+{% endcomment %}
+{% assign media = '/assets/proposals/weddings/' | relative_url %}
+<header class="bar" aria-label="Progress through the proposal">
+  <div class="inner"><span>Wedding films</span><span class="where" id="where" aria-live="polite">Hello</span></div>
+  <div class="progress" id="progress"></div>
+</header>
+
+<main id="main" data-base="1520" data-balance-due="2 weeks before the wedding">
+
+  <!-- HELLO -->
+  <section class="chapter tone-day cover" data-chapter="Hello">
+    <div class="inner">
+      <p class="label">Made for the two of you</p>
+      <h1 class="names">Wedding <em>films</em></h1>
+      <p class="cover-foot"><span>Full day coverage from £1,520</span><span>Your wedding film, one moment at a time</span><span>From Ivan, ivanc.digital</span></p>
+
+      <div class="letter rise">
+        <p class="label">Before anything else</p>
+        <div class="letter-body">
+          <p>Congratulations, and thank you for thinking of me to capture your day.</p>
+          <p>I've laid my pricing out the way I'll experience your wedding: one moment at a time, from the quiet bit at the start to the last song of the night.</p>
+          <p>Take your time. Nothing here is truly fixed until you say yes, and if something doesn't feel like you, tell me and we'll change it!</p>
+          <p class="sign">Ivan</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- A MESSAGE FROM IVAN: hidden until the video file is there -->
+  <section class="chapter tone-day" data-chapter="A message" id="helloSection" hidden style="padding-top:0">
+    <div class="inner">
+      <div class="hello rise">
+        <div class="hello-video" id="helloBox">
+          <video id="helloVideo" playsinline preload="metadata" controls poster="{{ media }}ivan-hello-poster.jpg" aria-label="A personal message from Ivan">
+            <source src="{{ media }}ivan-hello.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div>
+          <p class="label">A message from me</p>
+          <p class="lead" style="margin-top:14px">Press play. I'd rather say this to you than type it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW I FILM -->
+  <section class="chapter tone-day" data-chapter="How I film" style="padding-top:0">
+    <div class="inner">
+      <div class="film-clip rise">
+        <div class="clip" id="clip">
+          <video id="clipVideo" muted loop playsinline preload="auto" poster="{{ media }}rach-bbq-poster.jpg" aria-label="A candid moment from a gathering I filmed, looping without sound">
+            <source src="{{ media }}rach-bbq-loop.mp4" type="video/mp4">
+            <source src="{{ media }}rach-bbq-loop.webm" type="video/webm">
+          </video>
+          <p class="clip-fallback" role="status">Preview unavailable</p>
+        </div>
+        <div>
+          <p class="label">How I film</p>
+          <p class="lead" style="margin-top:14px">Candid, unposed, and close enough to catch the laugh.</p>
+          <p class="copy" style="margin-top:16px">That's the feel I'll bring to your day: real moments, left to happen on their own, with the sound kept clean so you can hear them all again.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE DAY -->
+  <section class="chapter tone-day" data-chapter="Your day" style="padding-top:0">
+    <div class="inner">
+      <p class="label">Full day video coverage</p>
+      <h2 class="big">Your day, <em>start to finish</em></h2>
+      <ol class="stops" id="stops">
+        <li class="stop on">
+          <button class="stop-btn" type="button" aria-expanded="true" aria-controls="s1" id="b1"><span class="dot"></span><h3>Getting ready</h3><span class="tick" aria-hidden="true"></span></button>
+          <div class="stop-panel" id="s1" role="region" aria-labelledby="b1"><div class="stop-clip"><p class="stop-text">Hair, makeup, the nervous laughing and the quiet bits before the ceremony. I'll be there from the start, staying out of the way, so the film opens the way your morning actually feels.</p></div></div>
+        </li>
+        <li class="stop">
+          <button class="stop-btn" type="button" aria-expanded="false" aria-controls="s2" id="b2"><span class="dot"></span><h3>First looks</h3><span class="tick" aria-hidden="true"></span></button>
+          <div class="stop-panel" id="s2" role="region" aria-labelledby="b2"><div class="stop-clip"><p class="stop-text">That first look at each other, or at the dress and the suit. It's over in a minute and you'll remember it for years. I'll be close enough to catch it, and far enough away that it still feels like just yours.</p></div></div>
+        </li>
+        <li class="stop">
+          <button class="stop-btn" type="button" aria-expanded="false" aria-controls="s3" id="b3"><span class="dot"></span><h3>The ceremony</h3><span class="tick" aria-hidden="true"></span></button>
+          <div class="stop-panel" id="s3" role="region" aria-labelledby="b3"><div class="stop-clip"><p class="stop-text">I'll record the vows and readings properly, so you can hear every word when you watch it back. It's all mixed into your film and already included in your package.</p></div></div>
+        </li>
+        <li class="stop">
+          <button class="stop-btn" type="button" aria-expanded="false" aria-controls="s4" id="b4"><span class="dot"></span><h3>The speeches</h3><span class="tick" aria-hidden="true"></span></button>
+          <div class="stop-panel" id="s4" role="region" aria-labelledby="b4"><div class="stop-clip"><p class="stop-text">The toasts, the laughs, and the moment someone can't get through their words. Recorded properly again, so you won't miss a line.</p></div></div>
+        </li>
+        <li class="stop">
+          <button class="stop-btn" type="button" aria-expanded="false" aria-controls="s5" id="b5"><span class="dot"></span><h3>First dance and the evening</h3><span class="tick" aria-hidden="true"></span></button>
+          <div class="stop-panel" id="s5" role="region" aria-labelledby="b5"><div class="stop-clip"><p class="stop-text">From your first dance right through to the evening, when everyone finally relaxes and it turns into a proper party.</p></div></div>
+        </li>
+      </ol>
+      <div class="coverage-note">
+        <span class="pill">Typically 8–10 hours on-site</span>
+        <span class="pill">One videographer</span>
+        <span class="pill">Ceremony and speeches audio included</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILMS -->
+  <section class="chapter tone-night" data-chapter="Your films">
+    <div class="inner">
+      <p class="label">What you'll keep</p>
+      <h2 class="big" style="margin-bottom:20px">Two films, <em>made for rewatching</em></h2>
+      <p class="lead" style="margin-bottom:clamp(28px,5vw,48px)">The point isn't just to show what happened. It's to let you feel it again, years from now.</p>
+      <div class="films">
+        <article class="film rise">
+          <p class="len">15–25 minutes</p>
+          <h3>Feature Film</h3>
+          <p class="copy">The full story of your day, 15–25 minutes. Colour graded, properly scored, and sent to you through a private link.</p>
+        </article>
+        <article class="film is-included rise">
+          <p class="len">3–5 minutes · Included</p>
+          <h3>Highlights Reel</h3>
+          <p class="copy">A 3–5 minute film that's easy to share with everyone who couldn't be there. It arrives with your feature film, within 6–8 weeks.</p>
+        </article>
+      </div>
+      <div class="delivery">
+        <span class="pill">Delivered in 6–8 weeks</span>
+        <span class="pill">Private download link</span>
+        <span class="pill">Hosted for 12 months</span>
+      </div>
+      <div class="song rise">
+        <p class="label">One question</p>
+        <p class="lead">Is there a song that means something to you both?</p>
+        <p class="copy">Tell me and I'll see what's possible for your film. Music has to be licensed, so I can't promise every song, but I'll always try to find the closest feeling.</p>
+        <label class="field"><span>Your song (optional)</span><input type="text" id="song" maxlength="120" autocomplete="off" placeholder="Song and artist"></label>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAKE IT YOURS -->
+  <section class="chapter tone-day" data-chapter="Make it yours">
+    <div class="inner">
+      <p class="label">Extras, if you want them</p>
+      <h2 class="big">Make it <em>yours</em></h2>
+      <p class="copy" style="margin: -24px 0 32px">Pick whatever feels right. Your total further down updates as you go.</p>
+      <div class="addons">
+
+        <article class="addon" data-id="rehearsal" data-price="300" data-name="Rehearsal Dinner Coverage">
+          <div class="addon-top"><h3>Rehearsal Dinner Coverage</h3><span class="price">£300</span></div>
+          <p class="short">Coverage of the evening before the wedding.</p>
+          <div class="more">
+            <div><h4>What it is</h4><p>A rehearsal dinner is a gathering the night before the wedding — usually an intimate meal with close family and the wedding party. It's full of candid laughter, heartfelt toasts, and calm moments that the wedding day itself doesn't always have time for. I'll capture it all and deliver it as a standalone short film, separate from your main wedding edit.</p></div>
+            <div><h4>You'll love this if...</h4>
+              <ul class="chips"><li>You're having a dinner the night before</li><li>You want to capture family time</li><li>Your wedding party is travelling in</li><li>You want the full story, start to finish</li></ul></div>
+          </div>
+          <button class="toggle" type="button" aria-pressed="false">Add to my package</button>
+        </article>
+
+        <article class="addon" data-id="social" data-price="100" data-name="Social Media Cut">
+          <div class="addon-top"><h3>Social Media Cut</h3><span class="price">£100</span></div>
+          <p class="short">A vertical 60-sec edit made for Instagram Reels and TikTok.</p>
+          <div class="more">
+            <div><h4>What it is</h4><p>A fast-paced, vertical (9:16) 60-second edit of your wedding day — built specifically for posting on Instagram Reels, TikTok, or WhatsApp. It's different from your highlights reel: shorter, snappier, and formatted for a phone screen. Think of it as the version you'd share with friends the day after.</p></div>
+            <div><h4>You'll love this if...</h4>
+              <ul class="chips"><li>You're active on Instagram or TikTok</li><li>You want something to post straight away</li><li>You want to share easily with friends &amp; family</li><li>You love a quick, feel-good watch</li></ul></div>
+          </div>
+          <button class="toggle" type="button" aria-pressed="false">Add to my package</button>
+        </article>
+
+        <article class="addon" data-id="usb" data-price="40" data-name="USB Delivery">
+          <div class="addon-top"><h3>USB Delivery</h3><span class="price">£40</span></div>
+          <p class="short">All final edits delivered on a physical branded USB drive.</p>
+          <div class="more">
+            <div><h4>What it is</h4><p>All of your final edited films — the feature film, highlights reel, and any other add-ons — loaded onto a branded USB drive and posted to you. Your digital download link is available for 12 months, but a USB means you always have a physical backup that doesn't expire. It also makes a lovely keepsake to store alongside your wedding album and other mementos from the day.</p></div>
+            <div><h4>You'll love this if...</h4>
+              <ul class="chips"><li>You want a permanent physical copy</li><li>You're not great at backing up files</li><li>You want to watch it on your TV easily</li><li>You love tangible keepsakes</li></ul></div>
+          </div>
+          <button class="toggle" type="button" aria-pressed="false">Add to my package</button>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- THE INVESTMENT -->
+  <section class="chapter tone-dusk" data-chapter="The investment">
+    <div class="inner narrow-wrap">
+      <p class="label">The numbers</p>
+      <h2 class="big">Everything, <em>in one place</em></h2>
+      <div class="ledger">
+        <div class="line"><div><h3>Full Day Video Coverage</h3><small>Typically 8–10 hours on-site with one videographer. Ceremony and speeches audio included.</small></div><p class="amt">£975</p></div>
+        <div class="line"><div><h3>Feature Film Edit</h3><small>15–25 minutes, colour graded, fully scored.</small></div><p class="amt">£545</p></div>
+        <div class="line"><div><h3>Highlights Reel</h3><small>3–5 minutes, a keepsake to share.</small></div><p class="amt">Included</p></div>
+        <div class="line" data-extra="rehearsal" hidden><div><h3>Rehearsal Dinner Coverage</h3></div><p class="amt">£300</p></div>
+        <div class="line" data-extra="social" hidden><div><h3>Social Media Cut</h3></div><p class="amt">£100</p></div>
+        <div class="line" data-extra="usb" hidden><div><h3>USB Delivery</h3></div><p class="amt">£40</p></div>
+      </div>
+      <div class="total">
+        <div><p class="label">Total</p></div>
+        <p class="sum" id="sum">£1,520</p>
+      </div>
+      <p class="vat" id="vat">Includes VAT of £253.33 (£1,266.67 before VAT).</p>
+      <div class="pay">
+        <div><p class="label">Deposit to secure your date</p><p class="amt" id="deposit">£380</p><p>25% of the total.</p></div>
+        <div><p class="label">Balance</p><p class="amt" id="balance">£1,140</p><p>Due 2 weeks before the wedding.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GETTING THERE -->
+  <section class="chapter tone-day" data-chapter="Getting there">
+    <div class="inner">
+      <p class="label">From yes to your films</p>
+      <h2 class="big">How we <em>get there</em></h2>
+      <ol class="steps">
+        <li class="step rise"><span class="pt"></span><div><h3>Sign the contract</h3><p>I'll send over a contract, and once that's signed your booking is confirmed.</p></div></li>
+        <li class="step rise"><span class="pt"></span><div><h3>Pay the deposit</h3><p>A 25% deposit locks in your date.</p></div></li>
+        <li class="step rise"><span class="pt"></span><div><h3>Planning questionnaire</h3><p>I'll send you a short questionnaire so I know the key moments, the timings and anything special you want me to catch.</p></div></li>
+        <li class="step rise"><span class="pt"></span><div><h3>Pay the balance</h3><p>The rest is due 2 weeks before the wedding.</p></div></li>
+        <li class="step rise"><span class="pt"></span><div><h3>Your day</h3><p>I'm there, and all you have to do is be yourselves.</p></div></li>
+        <li class="step rise"><span class="pt"></span><div><h3>Your films arrive</h3><p>I'll send your finished films as a private download link within 6–8 weeks of your wedding.</p></div></li>
+        <li class="step rise"><span class="pt"></span><div><h3>Revisions</h3><p>Two rounds of tweaks are included, so we can get it just right. Extra rounds are £50 each.</p></div></li>
+      </ol>
+
+      <div class="notes">
+        <div><h3>Travel</h3><p>Travel within 100 miles of my base is included. Beyond that it's £0.45 per mile for the extra distance, return journey. If the venue is far enough that staying over makes sense, we'll agree the accommodation together beforehand.</p></div>
+        <div><h3>Your files</h3><p>Your link stays live for 12 months, so please save a copy to your own device.</p></div>
+        <div><h3>Postponement and cancellation</h3><p>If you need to postpone, your deposit simply moves to the new date. Cancellations within 30 days of the wedding are non-refundable.</p></div>
+        <div><h3>Raw footage</h3><p>Raw footage isn't included as standard, but I can provide it on request. Just ask and I'll send you a quote.</p></div>
+        <div><h3>VAT</h3><p>All prices include VAT at 20%.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANKS -->
+  <section class="chapter tone-night thanks" data-chapter="With thanks">
+    <div class="inner">
+      <p class="label">One last thing</p>
+      <h2 class="big" style="max-width:12ch">I'd love to be there <em>with you</em></h2>
+      <div class="send" id="send">
+        <p class="lead">Ready when you are. Add your date, choose your extras above, then tap the box below to select it, copy it, and paste it into a message to me.</p>
+        <label class="field"><span>Your wedding date and venue</span><input type="text" id="weddingDate" maxlength="120" autocomplete="off" placeholder="Date and venue"></label>
+        <label class="sr" for="summary">Your choices</label>
+        <textarea id="summary" readonly rows="10"></textarea>
+      </div>
+      <div class="reach">
+        <p>To check your date, book, or ask anything, just message me.</p>
+        <p>info@ivanc.digital</p>
+        <span>Instagram @ivanc.digital</span>
+      </div>
+      <p class="sign" style="margin-top:28px">Ivan</p>
+      <footer>
+        <span>Copyright © 2026 ivanc.digital. All rights reserved.</span>
+        <button type="button" id="appearance">Change appearance</button>
+      </footer>
+    </div>
+  </section>
+
+</main>

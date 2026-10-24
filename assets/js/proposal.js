@@ -5,7 +5,10 @@
   'use strict';
 
 /* ---- Money ---- */
-  var BASE = 1520, DEPOSIT_RATE = 0.25, VAT_RATE = 1.2;
+  /* Each page can set its own base total and balance wording on <main> (data-base, data-balance-due).
+     Without them it falls back to the Beth & Kyle numbers. */
+  var cfg = (document.getElementById('main') || {}).dataset || {};
+  var BASE = Number(cfg.base) || 1520, DEPOSIT_RATE = 0.25, VAT_RATE = 1.2;
   function money(n, force2) {
     var whole = Math.abs(n - Math.round(n)) < 0.005;
     return '£' + n.toLocaleString('en-GB', { minimumFractionDigits: (whole && !force2) ? 0 : 2, maximumFractionDigits: 2 });
@@ -41,12 +44,15 @@
       if (picked[a.dataset.id]) extras.push(a.dataset.name + ' (' + money(Number(a.dataset.price)) + ')');
     });
     var songEl = document.getElementById('song'), song = songEl ? songEl.value.trim() : '';
+    var dateEl = document.getElementById('weddingDate');
+    var wedding = dateEl ? (dateEl.value.trim() || 'Date to confirm') : 'Thursday 21 October 2027';
+    var due = cfg.balanceDue || 'by 7 October 2027';
     var lines = [
-      'Wedding: Thursday 21 October 2027',
+      'Wedding: ' + wedding,
       'Package: Full Day Video Coverage, Feature Film and Highlights Reel',
       'Extras: ' + (extras.length ? extras.join(', ') : 'None'),
       'Total: ' + money(total) + ' including VAT',
-      'Deposit: ' + money(dep) + '. Balance: ' + money(total - dep) + ' by 7 October 2027'
+      'Deposit: ' + money(dep) + '. Balance: ' + money(total - dep) + ' ' + due
     ];
     if (song) lines.push('Our song: ' + song);
     box.value = lines.join('\n');
@@ -62,6 +68,8 @@
   window.addEventListener('resize', function () { var b = document.getElementById('summary'); if (b) { b.style.height = 'auto'; b.style.height = (b.scrollHeight + 2) + 'px'; } });
   var songField = document.getElementById('song');
   if (songField) songField.addEventListener('input', refresh);
+  var dateField = document.getElementById('weddingDate');
+  if (dateField) dateField.addEventListener('input', refresh);
   refresh();
 
   /* ---- Choices box: one tap selects everything, so the phone's own Copy button appears ---- */

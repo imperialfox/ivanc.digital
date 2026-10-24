@@ -79,7 +79,7 @@ The grid and the index list both read these same files, so nothing is written tw
 
 ## Private client proposals
 
-Pages in `proposals/` use `_layouts/proposal.html` and are not linked from anywhere on the site. Send the address to the client directly (for example `ivanc.digital/proposals/beth-and-kyle-hygetsbg/`). Add a short random code to the address so it cannot be guessed. Each one sets `noindex: true` so search engines skip it, and uses `assets/css/proposal.css`. To make another, copy `proposals/beth-and-kyle.html`, change the `permalink` and the words, and check the Total adds up. Note that the GitHub repo is public, so the page text can be read there.
+Pages in `proposals/` use `_layouts/proposal.html` and are not linked from anywhere on the site. Send the address to the client directly (for example `ivanc.digital/proposals/beth-and-kyle-hygetsbg/`). Add a short random code to the address so it cannot be guessed. Each one sets `noindex: true` so search engines skip it, and uses `assets/css/proposal.css`. There is also a general wedding pricing page, `proposals/weddings.html` (address `ivanc.digital/weddings/`), for any couple; its base total is `data-base` on `<main>`. To make another, copy `proposals/weddings.html`, change the `permalink` and the words, and check the Total adds up. Note that the GitHub repo is public, so the page text can be read there.
 
 ## The big wordmark
 
